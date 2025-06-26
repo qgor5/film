@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://kinotrailers.netlify.app/sitemap.xml
