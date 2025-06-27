@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Фильмы по жанру</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      background: #111;
+      color: #eee;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+    .movies-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .movie {
+      width: 140px;
+      margin: 10px;
+      text-align: center;
+      color: #eee;
+      text-decoration: none;
+    }
+    .movie img {
+      width: 100%;
+      height: 210px;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+    .movie-title {
+      margin-top: 5px;
+      font-size: 0.9rem;
+    }
+    @media (max-width: 600px) {
+      .movie {
+        width: calc(50% - 20px);
+      }
+      .movie img {
+        height: auto;
+        aspect-ratio: 2/3;
+      }
+      .movie-title {
+        font-size: 0.85rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1 id="genre-title">Фильмы по жанру</h1>
+  <div class="movies-container" id="movies-container"></div>
+
+  <script>
+    const apiKey = '7cb67565ace3a08cd9d099c749787121';
+    const imgUrl = 'https://image.tmdb.org/t/p/w500';
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const genreId = urlParams.get('id');
+    const genreName = urlParams.get('name');
+
+    document.getElementById('genre-title').textContent = `Жанр: ${genreName}`;
+
+    fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&with_genres=${genreId}&language=ru`)
+      .then(res => res.json())
+      .then(data => {
+        const container = document.getElementById('movies-container');
+        data.results.forEach(movie => {
+          const a = document.createElement('a');
+          a.href = `movie/${movie.id}-${(movie.title || movie.name).toLowerCase().replace(/\s+/g, '-')}.html`;
+          a.className = 'movie';
+          a.title = movie.title || movie.name;
+
+          const img = document.createElement('img');
+          img.src = imgUrl + movie.poster_path;
+          img.alt = movie.title || movie.name;
+
+          const title = document.createElement('div');
+          title.className = 'movie-title';
+          title.textContent = movie.title || movie.name;
+
+          a.appendChild(img);
+          a.appendChild(title);
+          container.appendChild(a);
+        });
+      })
+      .catch(err => {
+        document.getElementById('genre-title').textContent = 'Ошибка загрузки фильмов';
+        console.error(err);
+      });
+  </script>
+</body>
+</html>
