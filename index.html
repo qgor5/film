@@ -13,6 +13,130 @@
       padding: 20px;
     }
 
+    /* Верхнее меню */
+    .navbar {
+      display: flex;
+      align-items: center;
+      background: #222;
+      padding: 10px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      flex-wrap: wrap;
+    }
+
+    .navbar-logo a {
+      color: #eee;
+      font-weight: bold;
+      font-size: 1.5rem;
+      text-decoration: none;
+      margin-right: 20px;
+    }
+
+    /* Скрываем чекбокс */
+    #menu-toggle {
+      display: none;
+    }
+
+    .menu-icon {
+      display: none;
+      font-size: 1.8rem;
+      color: #eee;
+      cursor: pointer;
+      user-select: none;
+      margin-left: auto;
+    }
+
+    .navbar-links {
+      list-style: none;
+      display: flex;
+      gap: 15px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar-links li {
+      position: relative;
+    }
+
+    .navbar-links a {
+      color: #eee;
+      text-decoration: none;
+      padding: 8px 10px;
+      display: block;
+    }
+
+    /* Выпадающее меню */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background: #333;
+      min-width: 140px;
+      top: 100%;
+      left: 0;
+      border-radius: 4px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.6);
+      z-index: 1001;
+    }
+
+    .dropdown-content li {
+      border-bottom: 1px solid #444;
+    }
+
+    .dropdown-content li:last-child {
+      border-bottom: none;
+    }
+
+    .dropdown-content a {
+      padding: 8px 12px;
+    }
+
+    .dropdown:hover .dropdown-content,
+    .dropdown:focus-within .dropdown-content {
+      display: block;
+    }
+
+    /* Адаптив для мобильных */
+    @media (max-width: 768px) {
+      .menu-icon {
+        display: block;
+      }
+
+      .navbar-links {
+        flex-direction: column;
+        width: 100%;
+        display: none;
+        margin-top: 10px;
+      }
+
+      .navbar-links li {
+        width: 100%;
+      }
+
+      /* Показать меню, когда чекбокс включён */
+      #menu-toggle:checked + .menu-icon + .navbar-links {
+        display: flex;
+      }
+
+      /* Выпадающее меню на мобиле — раскрывается при клике */
+      .dropdown-content {
+        position: static;
+        box-shadow: none;
+        background: #222;
+        border-radius: 0;
+        display: none;
+      }
+
+      .dropdown.open > .dropdown-content {
+        display: block;
+      }
+    }
+
+    /* Твои фильмы */
+    .movies-container {
+      margin-top: 20px;
+    }
+
     .movie {
       display: inline-block;
       width: 140px;
@@ -20,6 +144,7 @@
       text-align: center;
       color: #eee;
       text-decoration: none;
+      vertical-align: top;
     }
 
     .movie img {
@@ -34,7 +159,7 @@
       font-size: 0.9rem;
     }
 
-    /* ✅ Только это добавлено — адаптация под мобильные устройства */
+    /* Адаптив для фильмов */
     @media (max-width: 600px) {
       .movie {
         width: 45vw;
@@ -54,10 +179,32 @@
   </style>
 </head>
 <body>
+
+  <!-- Верхнее меню -->
+  <nav class="navbar" role="navigation">
+    <div class="navbar-logo"><a href="/">TopKino</a></div>
+    <input type="checkbox" id="menu-toggle" aria-label="Toggle menu" />
+    <label for="menu-toggle" class="menu-icon">&#9776;</label>
+    <ul class="navbar-links">
+      <li><a href="/">Главная</a></li>
+      <li><a href="/movies.html">Фильмы</a></li>
+      <li class="dropdown" tabindex="0">
+        <a href="#">Жанры ▾</a>
+        <ul class="dropdown-content" aria-label="submenu">
+          <li><a href="/genre/action.html">Боевик</a></li>
+          <li><a href="/genre/comedy.html">Комедия</a></li>
+          <li><a href="/genre/horror.html">Ужасы</a></li>
+          <li><a href="/genre/drama.html">Драма</a></li>
+          <li><a href="/genre/fantasy.html">Фэнтези</a></li>
+          <li><a href="/genre/sci-fi.html">Фантастика</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
   <h1>Популярные фильмы</h1>
   <div class="movies-container">
 
-    <!-- 🔽 Твои фильмы ниже — ничего не удалено и не изменено -->
     <a class="movie" href="movie/574475-punkt-naznacheniya-uzy-krovi.html" title="Пункт назначения: Узы крови">
       <img src="https://image.tmdb.org/t/p/w500/A6SyVtXBxU6S5LfDg0tz7lUXhJq.jpg" alt="Пункт назначения: Узы крови" />
       <div class="movie-title">Пункт назначения: Узы крови</div>
@@ -159,5 +306,19 @@
     </a>
 
   </div>
+
+  <script>
+    // Скрипт для открытия/закрытия подменю "Жанры" на мобильных при клике
+    document.addEventListener('DOMContentLoaded', function() {
+      const dropdown = document.querySelector('.dropdown');
+      dropdown.addEventListener('click', function(e) {
+        if(window.innerWidth <= 768) {
+          e.preventDefault();
+          dropdown.classList.toggle('open');
+        }
+      });
+    });
+  </script>
+
 </body>
 </html>
