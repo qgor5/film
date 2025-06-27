@@ -147,9 +147,13 @@ async function main() {
     await fs.mkdir(MOVIE_DIR, { recursive: true });
     console.log('Папка movie создана или уже существует.');
 
-    // Загружаем популярные фильмы (первую страницу)
-    const popularData = await fetchJson(`https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=ru-RU&page=1`);
-    const movies = popularData.results;
+    const movies = [];
+const pagesToFetch = 5; // количество страниц для загрузки
+
+for (let page = 1; page <= pagesToFetch; page++) {
+  const popularData = await fetchJson(`https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=ru-RU&page=${page}`);
+  movies.push(...popularData.results);
+}
 
     // Для отслеживания ссылок в sitemap
     const sitemapUrls = ['https://kinotrailers.netlify.app/index.html'];
