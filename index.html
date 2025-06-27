@@ -5,104 +5,25 @@
   <title>TopKino — Трейлеры популярных фильмов</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
-    body {
-      background: #111;
-      color: #eee;
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding-top: 60px;
-    }
-
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      background: #000;
-      color: #fff;
-      padding: 10px 20px;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-      z-index: 1000;
-    }
-
-    .logo {
-      font-size: 1.2rem;
-      font-weight: bold;
-    }
-
-    nav a {
-      color: #fff;
-      margin: 0 10px;
-      text-decoration: none;
-      font-size: 0.95rem;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    .movie {
-      display: inline-block;
-      width: 140px;
-      margin: 10px;
-      text-align: center;
-      color: #eee;
-      text-decoration: none;
-    }
-
-    .movie img {
-      width: 140px;
-      height: 210px;
-      object-fit: cover;
-      border-radius: 6px;
-    }
-
-    .movie-title {
-      margin-top: 5px;
-      font-size: 0.9rem;
-    }
-
-    .movies-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    footer {
-      margin-top: 30px;
-      padding: 20px;
-      background: #000;
-      color: #aaa;
-      text-align: center;
-      font-size: 0.85rem;
-    }
-
+    body { background:#111; color:#eee; font-family: Arial, sans-serif; margin:0; padding:0; }
+    header { background:#222; padding:10px 20px; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; }
+    nav a { color:#fff; margin-right:15px; text-decoration:none; font-weight:bold; font-size:1rem; }
+    nav a:hover { text-decoration:underline; }
+    .movie { display:inline-block; width:140px; margin:10px; text-align:center; color:#eee; text-decoration:none; }
+    .movie img { width:140px; height:210px; object-fit: cover; border-radius: 6px; }
+    .movie-title { margin-top:5px; font-size:0.9rem; }
+    .movies-container { padding:20px; display:flex; flex-wrap:wrap; justify-content:center; }
+    footer { background:#222; color:#aaa; padding:20px; text-align:center; font-size:0.9rem; }
     @media (max-width: 600px) {
-      nav {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .movie {
-        width: 45%;
-        margin: 5px;
-      }
-
-      .movie img {
-        width: 100%;
-        height: auto;
-      }
+      .movie { width:45%; }
+      nav { display: flex; flex-direction: column; }
+      nav a { margin: 5px 0; }
     }
   </style>
 </head>
 <body>
-
   <header>
-    <div class="logo">TopKino</div>
+    <div style="font-size:1.2rem; font-weight:bold;">TopKino</div>
     <nav>
       <a href="index.html">Главная</a>
       <a href="genres.html">Жанры</a>
@@ -111,7 +32,14 @@
     </nav>
   </header>
 
-  <h1 style="text-align:center;">Популярные фильмы</h1>
+  <h1 style="text-align:center; padding:20px;">Популярные фильмы</h1>
 
   <div class="movies-container">
-    <!-- Все твои фильмы ниже остаются без изменений -->
+    <!-- ВСТАВЬ СЮДА ВСЕ ССЫЛКИ НА ФИЛЬМЫ -->
+  </div>
+
+  <footer>
+    &copy; 2025 TopKino. Все права защищены.
+  </footer>
+</body>
+</html>
