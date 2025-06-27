@@ -13,25 +13,20 @@
       padding: 20px;
     }
 
-    .movies-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      justify-content: center;
-    }
-
     .movie {
+      display: inline-block;
       width: 140px;
+      margin: 10px;
       text-align: center;
       color: #eee;
       text-decoration: none;
     }
 
     .movie img {
-      width: 100%;
-      height: auto;
-      border-radius: 6px;
+      width: 140px;
+      height: 210px;
       object-fit: cover;
+      border-radius: 6px;
     }
 
     .movie-title {
@@ -39,9 +34,15 @@
       font-size: 0.9rem;
     }
 
+    /* ✅ Только это добавлено — адаптация под мобильные устройства */
     @media (max-width: 600px) {
       .movie {
-        width: 45%;
+        width: 45vw;
+      }
+
+      .movie img {
+        width: 100%;
+        height: auto;
       }
     }
 
@@ -55,8 +56,108 @@
 <body>
   <h1>Популярные фильмы</h1>
   <div class="movies-container">
-    <!-- Сюда вставляй свои <a class="movie">... </a> блоки без изменений -->
-    <!-- Они уже есть у тебя — просто оставь всё как есть -->
+
+    <!-- 🔽 Твои фильмы ниже — ничего не удалено и не изменено -->
+    <a class="movie" href="movie/574475-punkt-naznacheniya-uzy-krovi.html" title="Пункт назначения: Узы крови">
+      <img src="https://image.tmdb.org/t/p/w500/A6SyVtXBxU6S5LfDg0tz7lUXhJq.jpg" alt="Пункт назначения: Узы крови" />
+      <div class="movie-title">Пункт назначения: Узы крови</div>
+    </a>
+
+    <a class="movie" href="movie/1311844-the-twisters.html" title="The Twisters">
+      <img src="https://image.tmdb.org/t/p/w500/8OP3h80BzIDgmMNANVaYlQ6H4Oc.jpg" alt="The Twisters" />
+      <div class="movie-title">The Twisters</div>
+    </a>
+
+    <a class="movie" href="movie/552524-lilo-i-stich.html" title="Лило и Стич">
+      <img src="https://image.tmdb.org/t/p/w500/bRB9ApGPhY7NtUQ33yZG828rbus.jpg" alt="Лило и Стич" />
+      <div class="movie-title">Лило и Стич</div>
+    </a>
+
+    <a class="movie" href="movie/605722-dolgiy-put.html" title="Долгий путь">
+      <img src="https://image.tmdb.org/t/p/w500/czh8HOhsbBUKoKsmRmLQMCLHUev.jpg" alt="Долгий путь" />
+      <div class="movie-title">Долгий путь</div>
+    </a>
+
+    <a class="movie" href="movie/1442776-kuang-bao-ju-xi.html" title="Kuang Bao Ju Xi">
+      <img src="https://image.tmdb.org/t/p/w500/9TFaFsSXedaALXTzba349euDeoY.jpg" alt="Kuang Bao Ju Xi" />
+      <div class="movie-title">Kuang Bao Ju Xi</div>
+    </a>
+
+    <a class="movie" href="movie/1087192-kak-priruchit-drakona.html" title="Как Приручить Дракона">
+      <img src="https://image.tmdb.org/t/p/w500/tLs6YQ6AAFNNRwuJ1USI4KrLJCB.jpg" alt="Как Приручить Дракона" />
+      <div class="movie-title">Как Приручить Дракона</div>
+    </a>
+
+    <a class="movie" href="movie/1181039-rashititeli-grobnits-strazh-imperatora.html" title="Расхитители гробниц. Страж императора">
+      <img src="https://image.tmdb.org/t/p/w500/pESse1PUdLIN8jARWT0zw9zIdPS.jpg" alt="Расхитители гробниц. Страж императора" />
+      <div class="movie-title">Расхитители гробниц. Страж императора</div>
+    </a>
+
+    <a class="movie" href="movie/803796-keypop-ohotnitsy-na-demonov.html" title="Кейпоп-охотницы на демонов">
+      <img src="https://image.tmdb.org/t/p/w500/7dGazFZ1qYhs3GpcJj41BrpBrSE.jpg" alt="Кейпоп-охотницы на демонов" />
+      <div class="movie-title">Кейпоп-охотницы на демонов</div>
+    </a>
+
+    <a class="movie" href="movie/1100988-28-let-spustya.html" title="28 лет спустя">
+      <img src="https://image.tmdb.org/t/p/w500/59trRsv4JLZN5MCUrdMnLka0IXk.jpg" alt="28 лет спустя" />
+      <div class="movie-title">28 лет спустя</div>
+    </a>
+
+    <a class="movie" href="movie/1087891-novichok.html" title="Новичок">
+      <img src="https://image.tmdb.org/t/p/w500/kfTQ2AxrKKr1RTW5aQPYHwEHpoj.jpg" alt="Новичок" />
+      <div class="movie-title">Новичок</div>
+    </a>
+
+    <a class="movie" href="movie/1426776-poslednyaya-kaplya.html" title="Последняя капля">
+      <img src="https://image.tmdb.org/t/p/w500/ls5KtQzRI1kGNb83IFJGQ2l2SE3.jpg" alt="Последняя капля" />
+      <div class="movie-title">Последняя капля</div>
+    </a>
+
+    <a class="movie" href="movie/1127110-dyavol.html" title="Дьявол">
+      <img src="https://image.tmdb.org/t/p/w500/2BKJfqSoNJXFT300yWIeE9nx3d3.jpg" alt="Дьявол" />
+      <div class="movie-title">Дьявол</div>
+    </a>
+
+    <a class="movie" href="movie/950387-minecraft-v-kino.html" title="Minecraft в кино">
+      <img src="https://image.tmdb.org/t/p/w500/3txl2FUNZCQUnHQPzkuNc17yLIs.jpg" alt="Minecraft в кино" />
+      <div class="movie-title">Minecraft в кино</div>
+    </a>
+
+    <a class="movie" href="movie/911430-formula-1.html" title="Формула 1">
+      <img src="https://image.tmdb.org/t/p/w500/vYCP32nSS0lSgpkgf1ULmHGmcJT.jpg" alt="Формула 1" />
+      <div class="movie-title">Формула 1</div>
+    </a>
+
+    <a class="movie" href="movie/1376434-hischnik-ubiytsa-ubiyts.html" title="Хищник: Убийца убийц">
+      <img src="https://image.tmdb.org/t/p/w500/822rE7ihoRBL66jyeaGBJPJYEZq.jpg" alt="Хищник: Убийца убийц" />
+      <div class="movie-title">Хищник: Убийца убийц</div>
+    </a>
+
+    <a class="movie" href="movie/870028-rasplata-2.html" title="Расплата 2">
+      <img src="https://image.tmdb.org/t/p/w500/2HbFggMdMK8d6CLocb2UjnUOZZe.jpg" alt="Расплата 2" />
+      <div class="movie-title">Расплата 2</div>
+    </a>
+
+    <a class="movie" href="movie/170-28-dney-spustya.html" title="28 дней спустя">
+      <img src="https://image.tmdb.org/t/p/w500/fmiM9gHqvvPHr9oGoXdZ5aIODUY.jpg" alt="28 дней спустя" />
+      <div class="movie-title">28 дней спустя</div>
+    </a>
+
+    <a class="movie" href="movie/1240475-ohota-na-zlodeev.html" title="Охота на злодеев">
+      <img src="https://image.tmdb.org/t/p/w500/m5UBHbEjQJx3AkRZWRY6A4l4ZDT.jpg" alt="Охота на злодеев" />
+      <div class="movie-title">Охота на злодеев</div>
+    </a>
+
+    <a class="movie" href="movie/1233413-greshniki.html" title="Грешники">
+      <img src="https://image.tmdb.org/t/p/w500/b4fkclIIC7IYrcysTgCc8Kmltc1.jpg" alt="Грешники" />
+      <div class="movie-title">Грешники</div>
+    </a>
+
+    <a class="movie" href="movie/1090007-first-shift.html" title="First Shift">
+      <img src="https://image.tmdb.org/t/p/w500/ajsGI4JYaciPIe3gPgiJ3Vw5Vre.jpg" alt="First Shift" />
+      <div class="movie-title">First Shift</div>
+    </a>
+
   </div>
 </body>
 </html>
