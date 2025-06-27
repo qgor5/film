@@ -1,0 +1,58 @@
+<header>
+  <nav>
+    <ul class="menu">
+      <li><a href="/index.html">Главная</a></li>
+      <li class="dropdown">
+        <a href="#">Жанры ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="/genre/ужасы.html">Ужасы</a></li>
+          <li><a href="/genre/боевик.html">Боевик</a></li>
+          <li><a href="/genre/комедия.html">Комедия</a></li>
+          <li><a href="/genre/мультфильмы.html">Мультфильмы</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#">Годы ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="/year/2024.html">2024</a></li>
+          <li><a href="/year/2023.html">2023</a></li>
+          <li><a href="/year/2022.html">2022</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<style>
+.menu {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  background: #222;
+  padding: 10px;
+}
+.menu a {
+  color: white;
+  text-decoration: none;
+}
+.dropdown {
+  position: relative;
+}
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background: #333;
+  list-style: none;
+  padding: 10px;
+  margin: 0;
+}
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+.dropdown-menu li {
+  margin: 5px 0;
+}
+.dropdown-menu a {
+  color: #fff;
+}
+</style>
