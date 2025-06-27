@@ -1,189 +1,166 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
   <title>TopKino — Трейлеры популярных фильмов</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
-  body {
-    background: #111;
-    color: #eee;
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 20px;
-  }
-
-  h1 {
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-  }
-
-  .movies-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .movie {
-    width: 140px;
-    margin: 10px;
-    text-align: center;
-    color: #eee;
-    text-decoration: none;
-  }
-
-  .movie img {
-    width: 100%;
-    height: 210px;
-    object-fit: cover;
-    border-radius: 6px;
-  }
-
-  .movie-title {
-    margin-top: 5px;
-    font-size: 0.9rem;
-  }
-
-  /* Адаптация: на мобильных 2 фильма в ряд */
-  @media (max-width: 600px) {
+    body {
+      background: #111;
+      color: #eee;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+    .movies-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
     .movie {
-      width: calc(50% - 20px); /* 2 карточки в ряд с отступами */
+      width: 140px;
       margin: 10px;
+      text-align: center;
+      color: #eee;
+      text-decoration: none;
     }
-
     .movie img {
-      height: auto;
-      aspect-ratio: 2/3;
+      width: 100%;
+      height: 210px;
+      object-fit: cover;
+      border-radius: 6px;
     }
-
     .movie-title {
-      font-size: 0.85rem;
+      margin-top: 5px;
+      font-size: 0.9rem;
     }
-  }
-</style>
+    @media (max-width: 600px) {
+      .movie {
+        width: calc(50% - 20px);
+        margin: 10px;
+      }
+      .movie img {
+        height: auto;
+        aspect-ratio: 2/3;
+      }
+      .movie-title {
+        font-size: 0.85rem;
+      }
+    }
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #222;
+      padding: 10px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .logo {
+      color: #fff;
+      font-size: 1.2rem;
+      text-decoration: none;
+    }
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+    .nav-toggle span {
+      background: #fff;
+      height: 3px;
+      width: 25px;
+      margin: 3px 0;
+    }
+    nav {
+      display: flex;
+      gap: 15px;
+    }
+    nav a {
+      color: #eee;
+      text-decoration: none;
+    }
+    .genres-dropdown {
+      position: relative;
+    }
+    .genres-list {
+      display: none;
+      position: absolute;
+      background: #222;
+      top: 100%;
+      left: 0;
+      z-index: 999;
+      padding: 10px;
+      border-radius: 6px;
+    }
+    .genres-list a {
+      display: block;
+      padding: 5px;
+    }
+    .genres-dropdown:hover .genres-list {
+      display: block;
+    }
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        background: #222;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        padding: 10px;
+        border-radius: 6px;
+      }
+      nav.active {
+        display: flex;
+      }
+      .nav-toggle {
+        display: flex;
+      }
+    }
+  </style>
 </head>
 <body>
+  <header>
+    <a href="index.html" class="logo">TopKino</a>
+    <div class="nav-toggle" onclick="document.querySelector('nav').classList.toggle('active')">
+      <span></span><span></span><span></span>
+    </div>
+    <nav>
+      <a href="index.html">Главная</a>
+      <div class="genres-dropdown">
+        <a href="#">Жанры</a>
+        <div class="genres-list" id="genreList"></div>
+      </div>
+      <a href="#">Блог</a>
+    </nav>
+  </header>
   <h1>Популярные фильмы</h1>
   <div class="movies-container">
-    <a class="movie" href="movie/574475-punkt-naznacheniya-uzy-krovi.html" title="Пункт назначения: Узы крови">
-      <img src="https://image.tmdb.org/t/p/w500/A6SyVtXBxU6S5LfDg0tz7lUXhJq.jpg" alt="Пункт назначения: Узы крови" />
-      <div class="movie-title">Пункт назначения: Узы крови</div>
-    </a>
-
-    <a class="movie" href="movie/1311844-the-twisters.html" title="The Twisters">
-      <img src="https://image.tmdb.org/t/p/w500/8OP3h80BzIDgmMNANVaYlQ6H4Oc.jpg" alt="The Twisters" />
-      <div class="movie-title">The Twisters</div>
-    </a>
-
-    <a class="movie" href="movie/552524-lilo-i-stich.html" title="Лило и Стич">
-      <img src="https://image.tmdb.org/t/p/w500/bRB9ApGPhY7NtUQ33yZG828rbus.jpg" alt="Лило и Стич" />
-      <div class="movie-title">Лило и Стич</div>
-    </a>
-
-    <a class="movie" href="movie/605722-dolgiy-put.html" title="Долгий путь">
-      <img src="https://image.tmdb.org/t/p/w500/czh8HOhsbBUKoKsmRmLQMCLHUev.jpg" alt="Долгий путь" />
-      <div class="movie-title">Долгий путь</div>
-    </a>
-
-    <a class="movie" href="movie/1442776-kuang-bao-ju-xi.html" title="Kuang Bao Ju Xi">
-      <img src="https://image.tmdb.org/t/p/w500/9TFaFsSXedaALXTzba349euDeoY.jpg" alt="Kuang Bao Ju Xi" />
-      <div class="movie-title">Kuang Bao Ju Xi</div>
-    </a>
-
-    <a class="movie" href="movie/1087192-kak-priruchit-drakona.html" title="Как Приручить Дракона">
-      <img src="https://image.tmdb.org/t/p/w500/tLs6YQ6AAFNNRwuJ1USI4KrLJCB.jpg" alt="Как Приручить Дракона" />
-      <div class="movie-title">Как Приручить Дракона</div>
-    </a>
-
-    <a class="movie" href="movie/1181039-rashititeli-grobnits-strazh-imperatora.html" title="Расхитители гробниц. Страж императора">
-      <img src="https://image.tmdb.org/t/p/w500/pESse1PUdLIN8jARWT0zw9zIdPS.jpg" alt="Расхитители гробниц. Страж императора" />
-      <div class="movie-title">Расхитители гробниц. Страж императора</div>
-    </a>
-
-    <a class="movie" href="movie/803796-keypop-ohotnitsy-na-demonov.html" title="Кейпоп-охотницы на демонов">
-      <img src="https://image.tmdb.org/t/p/w500/7dGazFZ1qYhs3GpcJj41BrpBrSE.jpg" alt="Кейпоп-охотницы на демонов" />
-      <div class="movie-title">Кейпоп-охотницы на демонов</div>
-    </a>
-
-    <a class="movie" href="movie/1100988-28-let-spustya.html" title="28 лет спустя">
-      <img src="https://image.tmdb.org/t/p/w500/59trRsv4JLZN5MCUrdMnLka0IXk.jpg" alt="28 лет спустя" />
-      <div class="movie-title">28 лет спустя</div>
-    </a>
-
-    <a class="movie" href="movie/1087891-novichok.html" title="Новичок">
-      <img src="https://image.tmdb.org/t/p/w500/kfTQ2AxrKKr1RTW5aQPYHwEHpoj.jpg" alt="Новичок" />
-      <div class="movie-title">Новичок</div>
-    </a>
-
-    <a class="movie" href="movie/1426776-poslednyaya-kaplya.html" title="Последняя капля">
-      <img src="https://image.tmdb.org/t/p/w500/ls5KtQzRI1kGNb83IFJGQ2l2SE3.jpg" alt="Последняя капля" />
-      <div class="movie-title">Последняя капля</div>
-    </a>
-
-    <a class="movie" href="movie/1127110-dyavol.html" title="Дьявол">
-      <img src="https://image.tmdb.org/t/p/w500/2BKJfqSoNJXFT300yWIeE9nx3d3.jpg" alt="Дьявол" />
-      <div class="movie-title">Дьявол</div>
-    </a>
-
-    <a class="movie" href="movie/950387-minecraft-v-kino.html" title="Minecraft в кино">
-      <img src="https://image.tmdb.org/t/p/w500/3txl2FUNZCQUnHQPzkuNc17yLIs.jpg" alt="Minecraft в кино" />
-      <div class="movie-title">Minecraft в кино</div>
-    </a>
-
-    <a class="movie" href="movie/911430-formula-1.html" title="Формула 1">
-      <img src="https://image.tmdb.org/t/p/w500/vYCP32nSS0lSgpkgf1ULmHGmcJT.jpg" alt="Формула 1" />
-      <div class="movie-title">Формула 1</div>
-    </a>
-
-    <a class="movie" href="movie/1376434-hischnik-ubiytsa-ubiyts.html" title="Хищник: Убийца убийц">
-      <img src="https://image.tmdb.org/t/p/w500/822rE7ihoRBL66jyeaGBJPJYEZq.jpg" alt="Хищник: Убийца убийц" />
-      <div class="movie-title">Хищник: Убийца убийц</div>
-    </a>
-
-    <a class="movie" href="movie/870028-rasplata-2.html" title="Расплата 2">
-      <img src="https://image.tmdb.org/t/p/w500/2HbFggMdMK8d6CLocb2UjnUOZZe.jpg" alt="Расплата 2" />
-      <div class="movie-title">Расплата 2</div>
-    </a>
-
-    <a class="movie" href="movie/170-28-dney-spustya.html" title="28 дней спустя">
-      <img src="https://image.tmdb.org/t/p/w500/fmiM9gHqvvPHr9oGoXdZ5aIODUY.jpg" alt="28 дней спустя" />
-      <div class="movie-title">28 дней спустя</div>
-    </a>
-
-    <a class="movie" href="movie/1240475-ohota-na-zlodeev.html" title="Охота на злодеев">
-      <img src="https://image.tmdb.org/t/p/w500/m5UBHbEjQJx3AkRZWRY6A4l4ZDT.jpg" alt="Охота на злодеев" />
-      <div class="movie-title">Охота на злодеев</div>
-    </a>
-
-    <a class="movie" href="movie/1233413-greshniki.html" title="Грешники">
-      <img src="https://image.tmdb.org/t/p/w500/b4fkclIIC7IYrcysTgCc8Kmltc1.jpg" alt="Грешники" />
-      <div class="movie-title">Грешники</div>
-    </a>
-
-    <a class="movie" href="movie/1090007-first-shift.html" title="First Shift">
-      <img src="https://image.tmdb.org/t/p/w500/ajsGI4JYaciPIe3gPgiJ3Vw5Vre.jpg" alt="First Shift" />
-      <div class="movie-title">First Shift</div>
-
-          <a class="movie" href="movie/1136176-stalingrad-battle.html" title="Сталинград: Битва">
-      <img src="https://image.tmdb.org/t/p/w500/xMaHylsKoJ4pD51P7ZQKDZ68A8z.jpg" alt="Сталинград: Битва" />
-      <div class="movie-title">Сталинград: Битва</div>
-    </a>
-
-    <a class="movie" href="movie/1286835-prizraki-v-labirinte.html" title="Призраки в лабиринте">
-      <img src="https://image.tmdb.org/t/p/w500/y74oKavLTnqOEqYShuV8xWRFgTw.jpg" alt="Призраки в лабиринте" />
-      <div class="movie-title">Призраки в лабиринте</div>
-    </a>
-
-    <a class="movie" href="movie/1191110-zov-bolota.html" title="Зов болота">
-      <img src="https://image.tmdb.org/t/p/w500/rmP9c1tM8e2YjU4Fbd9cMqqXXbW.jpg" alt="Зов болота" />
-      <div class="movie-title">Зов болота</div>
-    </a>
-
-    <a class="movie" href="movie/1450021-taina-podzemelya.html" title="Тайна подземелья">
-      <img src="https://image.tmdb.org/t/p/w500/dcJFRNnEvI5DJg6yDWvn5HErREx.jpg" alt="Тайна подземелья" />
-      <div class="movie-title">Тайна подземелья</div>
-    </a>
-    </a>
+    <!-- фильмы как есть -->
   </div>
+  <script>
+    const API_KEY = '7cb67565ace3a08cd9d099c749787121';
+    fetch('https://api.themoviedb.org/3/genre/movie/list?language=ru', {
+      headers: {
+        Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI3Y2I2NzU2NWFjZTNhMDhjZDlkMDk5Yzc0OTc4NzEyMSIsIm5iZiI6MTcyMjEwNzE3Mi41MzYsInN1YiI6IjY2YTU0NTI0MGRhOWFkYWQzMTg2ZTU5ZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.q3l_-tPvyWXqxB_nDMPJUEMnjFJz_VlwXFPTcnUQHjM'
+      }
+    })
+    .then(res => res.json())
+    .then(data => {
+      const list = document.getElementById('genreList');
+      data.genres.forEach(genre => {
+        const a = document.createElement('a');
+        a.href = `genre.html?id=${genre.id}`;
+        a.textContent = genre.name;
+        list.appendChild(a);
+      });
+    });
+  </script>
 </body>
 </html>
