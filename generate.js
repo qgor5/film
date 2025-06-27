@@ -171,7 +171,7 @@ async function main() {
       await fs.writeFile(movieFilePath, html, 'utf-8');
       console.log(`Сгенерирована страница: ${movieFileName}`);
 
-      sitemapUrls.push(`https://yourdomain.com/movie/${movieFileName}`);
+      sitemapUrls.push(`https://kinotrailers.netlify.app/movie/${movieFileName}`);
     }
 
     // Генерируем главную страницу
