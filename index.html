@@ -5,159 +5,123 @@
   <title>TopKino — Трейлеры популярных фильмов</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
-    body {
-      background: #111;
-      color: #eee;
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 20px;
-    }
-    .movie {
-      display: inline-block;
-      width: 140px;
-      margin: 10px;
-      text-align: center;
-      color: #eee;
-      text-decoration: none;
-    }
-    .movie img {
-      width: 140px;
-      height: 210px;
-      object-fit: cover;
-      border-radius: 6px;
-    }
-    .movie-title {
-      margin-top: 5px;
-      font-size: 0.9rem;
-    }
-    /* Меню жанров и поиск */
-    #genre-menu {
-      margin-bottom: 20px;
-    }
-    #genre-menu a {
-      color: #eee;
-      text-decoration: none;
-      margin-right: 15px;
-      cursor: pointer;
-      font-weight: bold;
-    }
-    #genre-menu a:hover {
-      text-decoration: underline;
-    }
-    #search-input {
-      margin-bottom: 20px;
-      padding: 8px;
-      width: 100%;
-      max-width: 300px;
-      border-radius: 4px;
-      border: none;
-      font-size: 1rem;
-    }
-    /* ✅ Только это добавлено — адаптация под мобильные устройства */
-    @media (max-width: 600px) {
-      .movie {
-        width: 45vw;
-      }
-      .movie img {
-        width: 100%;
-        height: auto;
-      }
-    }
-    @media (max-width: 360px) {
-      .movie {
-        width: 100%;
-      }
-    }
+    body { background:#111; color:#eee; font-family: Arial, sans-serif; margin:0; padding:20px; }
+    .movie { display:inline-block; width:140px; margin:10px; text-align:center; color:#eee; text-decoration:none; }
+    .movie img { width:140px; height:210px; object-fit: cover; border-radius: 6px; }
+    .movie-title { margin-top:5px; font-size:0.9rem; }
   </style>
 </head>
 <body>
 
-  <h1>Популярные фильмы</h1>
-
-  <!-- Меню жанров -->
-  <nav id="genre-menu">
-    <a href="#" data-genre="all">Все</a>
-    <a href="#" data-genre="ужасы">Ужасы</a>
-    <a href="#" data-genre="боевик">Боевик</a>
-    <a href="#" data-genre="фантастика">Фантастика</a>
-    <a href="#" data-genre="комедия">Комедия</a>
-    <a href="#" data-genre="приключения">Приключения</a>
-    <!-- Добавь сюда другие жанры, если надо -->
+  <nav id="genre-menu" style="margin-bottom:20px;">
+    <a href="#" data-genre="all" style="color:#eee; margin-right:15px; text-decoration:none;">Все</a>
+    <a href="#" data-genre="боевик" style="color:#eee; margin-right:15px; text-decoration:none;">Боевик</a>
+    <a href="#" data-genre="ужасы" style="color:#eee; margin-right:15px; text-decoration:none;">Ужасы</a>
+    <a href="#" data-genre="комедия" style="color:#eee; margin-right:15px; text-decoration:none;">Комедия</a>
+    <a href="#" data-genre="приключения" style="color:#eee; margin-right:15px; text-decoration:none;">Приключения</a>
+    <!-- Добавь нужные жанры сюда -->
   </nav>
-
-  <!-- Поиск -->
-  <input type="text" id="search-input" placeholder="Поиск фильмов..." />
-
+  
+  <h1>Популярные фильмы</h1>
   <div class="movies-container">
-
-    <!-- 🔽 Твои фильмы ниже — добавлены data-genres для фильтрации -->
-    <a class="movie" href="movie/574475-punkt-naznacheniya-uzy-krovi.html" title="Пункт назначения: Узы крови" data-genres="ужасы,боевик">
+    <a class="movie" href="movie/574475-punkt-naznacheniya-uzy-krovi.html" title="Пункт назначения: Узы крови">
       <img src="https://image.tmdb.org/t/p/w500/A6SyVtXBxU6S5LfDg0tz7lUXhJq.jpg" alt="Пункт назначения: Узы крови" />
       <div class="movie-title">Пункт назначения: Узы крови</div>
     </a>
 
-    <a class="movie" href="movie/1311844-the-twisters.html" title="The Twisters" data-genres="фантастика,приключения">
+    <a class="movie" href="movie/1311844-the-twisters.html" title="The Twisters">
       <img src="https://image.tmdb.org/t/p/w500/8OP3h80BzIDgmMNANVaYlQ6H4Oc.jpg" alt="The Twisters" />
       <div class="movie-title">The Twisters</div>
     </a>
 
-    <a class="movie" href="movie/552524-lilo-i-stich.html" title="Лило и Стич" data-genres="комедия,приключения">
+    <a class="movie" href="movie/552524-lilo-i-stich.html" title="Лило и Стич">
       <img src="https://image.tmdb.org/t/p/w500/bRB9ApGPhY7NtUQ33yZG828rbus.jpg" alt="Лило и Стич" />
       <div class="movie-title">Лило и Стич</div>
     </a>
 
-    <!-- Добавь data-genres для всех фильмов, чтобы фильтрация работала -->
+    <a class="movie" href="movie/605722-dolgiy-put.html" title="Долгий путь">
+      <img src="https://image.tmdb.org/t/p/w500/czh8HOhsbBUKoKsmRmLQMCLHUev.jpg" alt="Долгий путь" />
+      <div class="movie-title">Долгий путь</div>
+    </a>
 
-    <!-- остальные фильмы аналогично -->
-  </div>
+    <a class="movie" href="movie/1442776-kuang-bao-ju-xi.html" title="Kuang Bao Ju Xi">
+      <img src="https://image.tmdb.org/t/p/w500/9TFaFsSXedaALXTzba349euDeoY.jpg" alt="Kuang Bao Ju Xi" />
+      <div class="movie-title">Kuang Bao Ju Xi</div>
+    </a>
 
-  <script>
-    // Функция фильтрации по жанрам и поиску
-    const genreLinks = document.querySelectorAll('#genre-menu a');
-    const movies = document.querySelectorAll('.movies-container .movie');
-    const searchInput = document.getElementById('search-input');
+    <a class="movie" href="movie/1087192-kak-priruchit-drakona.html" title="Как Приручить Дракона">
+      <img src="https://image.tmdb.org/t/p/w500/tLs6YQ6AAFNNRwuJ1USI4KrLJCB.jpg" alt="Как Приручить Дракона" />
+      <div class="movie-title">Как Приручить Дракона</div>
+    </a>
 
-    function filterMovies() {
-      const selectedGenre = document.querySelector('#genre-menu a.selected')?.getAttribute('data-genre') || 'all';
-      const searchTerm = searchInput.value.trim().toLowerCase();
+    <a class="movie" href="movie/1181039-rashititeli-grobnits-strazh-imperatora.html" title="Расхитители гробниц. Страж императора">
+      <img src="https://image.tmdb.org/t/p/w500/pESse1PUdLIN8jARWT0zw9zIdPS.jpg" alt="Расхитители гробниц. Страж императора" />
+      <div class="movie-title">Расхитители гробниц. Страж императора</div>
+    </a>
 
-      movies.forEach(movie => {
-        const title = movie.querySelector('.movie-title').textContent.toLowerCase();
-        const genres = movie.getAttribute('data-genres').toLowerCase();
+    <a class="movie" href="movie/803796-keypop-ohotnitsy-na-demonov.html" title="Кейпоп-охотницы на демонов">
+      <img src="https://image.tmdb.org/t/p/w500/7dGazFZ1qYhs3GpcJj41BrpBrSE.jpg" alt="Кейпоп-охотницы на демонов" />
+      <div class="movie-title">Кейпоп-охотницы на демонов</div>
+    </a>
 
-        const matchesGenre = selectedGenre === 'all' || genres.includes(selectedGenre);
-        const matchesSearch = title.includes(searchTerm);
+    <a class="movie" href="movie/1100988-28-let-spustya.html" title="28 лет спустя">
+      <img src="https://image.tmdb.org/t/p/w500/59trRsv4JLZN5MCUrdMnLka0IXk.jpg" alt="28 лет спустя" />
+      <div class="movie-title">28 лет спустя</div>
+    </a>
 
-        if (matchesGenre && matchesSearch) {
-          movie.style.display = 'inline-block';
-        } else {
-          movie.style.display = 'none';
-        }
-      });
-    }
+    <a class="movie" href="movie/1087891-novichok.html" title="Новичок">
+      <img src="https://image.tmdb.org/t/p/w500/kfTQ2AxrKKr1RTW5aQPYHwEHpoj.jpg" alt="Новичок" />
+      <div class="movie-title">Новичок</div>
+    </a>
 
-    // Обработка кликов по жанрам
-    genreLinks.forEach(link => {
-      link.addEventListener('click', e => {
-        e.preventDefault();
+    <a class="movie" href="movie/1426776-poslednyaya-kaplya.html" title="Последняя капля">
+      <img src="https://image.tmdb.org/t/p/w500/ls5KtQzRI1kGNb83IFJGQ2l2SE3.jpg" alt="Последняя капля" />
+      <div class="movie-title">Последняя капля</div>
+    </a>
 
-        // Убираем выделение со всех
-        genreLinks.forEach(l => l.classList.remove('selected'));
+    <a class="movie" href="movie/1127110-dyavol.html" title="Дьявол">
+      <img src="https://image.tmdb.org/t/p/w500/2BKJfqSoNJXFT300yWIeE9nx3d3.jpg" alt="Дьявол" />
+      <div class="movie-title">Дьявол</div>
+    </a>
 
-        // Добавляем выделение к текущему
-        link.classList.add('selected');
+    <a class="movie" href="movie/950387-minecraft-v-kino.html" title="Minecraft в кино">
+      <img src="https://image.tmdb.org/t/p/w500/3txl2FUNZCQUnHQPzkuNc17yLIs.jpg" alt="Minecraft в кино" />
+      <div class="movie-title">Minecraft в кино</div>
+    </a>
 
-        filterMovies();
-      });
-    });
+    <a class="movie" href="movie/911430-formula-1.html" title="Формула 1">
+      <img src="https://image.tmdb.org/t/p/w500/vYCP32nSS0lSgpkgf1ULmHGmcJT.jpg" alt="Формула 1" />
+      <div class="movie-title">Формула 1</div>
+    </a>
 
-    // Обработка ввода в поиск
-    searchInput.addEventListener('input', () => {
-      filterMovies();
-    });
+    <a class="movie" href="movie/1376434-hischnik-ubiytsa-ubiyts.html" title="Хищник: Убийца убийц">
+      <img src="https://image.tmdb.org/t/p/w500/822rE7ihoRBL66jyeaGBJPJYEZq.jpg" alt="Хищник: Убийца убийц" />
+      <div class="movie-title">Хищник: Убийца убийц</div>
+    </a>
 
-    // Изначально выбрана "Все"
-    document.querySelector('#genre-menu a[data-genre="all"]').classList.add('selected');
-  </script>
+    <a class="movie" href="movie/870028-rasplata-2.html" title="Расплата 2">
+      <img src="https://image.tmdb.org/t/p/w500/2HbFggMdMK8d6CLocb2UjnUOZZe.jpg" alt="Расплата 2" />
+      <div class="movie-title">Расплата 2</div>
+    </a>
+
+    <a class="movie" href="movie/170-28-dney-spustya.html" title="28 дней спустя">
+      <img src="https://image.tmdb.org/t/p/w500/fmiM9gHqvvPHr9oGoXdZ5aIODUY.jpg" alt="28 дней спустя" />
+      <div class="movie-title">28 дней спустя</div>
+    </a>
+
+    <a class="movie" href="movie/1240475-ohota-na-zlodeev.html" title="Охота на злодеев">
+      <img src="https://image.tmdb.org/t/p/w500/m5UBHbEjQJx3AkRZWRY6A4l4ZDT.jpg" alt="Охота на злодеев" />
+      <div class="movie-title">Охота на злодеев</div>
+    </a>
+
+    <a class="movie" href="movie/1233413-greshniki.html" title="Грешники">
+      <img src="https://image.tmdb.org/t/p/w500/b4fkclIIC7IYrcysTgCc8Kmltc1.jpg" alt="Грешники" />
+      <div class="movie-title">Грешники</div>
+    </a>
+
+    <a class="movie" href="movie/1090007-first-shift.html" title="First Shift">
+      <img src="https://image.tmdb.org/t/p/w500/ajsGI4JYaciPIe3gPgiJ3Vw5Vre.jpg" alt="First Shift" />
+      <div class="movie-title">First Shift</div>
+    </a></div>
 </body>
 </html>
