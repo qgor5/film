@@ -1,14 +1,65 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
   <title>TopKino — Трейлеры популярных фильмов</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
-    body { background:#111; color:#eee; font-family: Arial, sans-serif; margin:0; padding:20px; }
-    .movie { display:inline-block; width:140px; margin:10px; text-align:center; color:#eee; text-decoration:none; }
-    .movie img { width:140px; height:210px; object-fit: cover; border-radius: 6px; }
-    .movie-title { margin-top:5px; font-size:0.9rem; }
+    body {
+      background: #111;
+      color: #eee;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+
+    .movies-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .movie {
+      display: inline-block;
+      width: 140px;
+      margin: 10px;
+      text-align: center;
+      color: #eee;
+      text-decoration: none;
+    }
+
+    .movie img {
+      width: 140px;
+      height: 210px;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+
+    .movie-title {
+      margin-top: 5px;
+      font-size: 0.9rem;
+    }
+
+    /* Адаптация для экранов до 600px */
+    @media (max-width: 600px) {
+      .movie {
+        width: 45vw;
+      }
+
+      .movie img {
+        width: 45vw;
+        height: calc(45vw * 1.5); /* соотношение 2:3 */
+      }
+
+      .movie-title {
+        font-size: 0.8rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -112,6 +163,7 @@
     <a class="movie" href="movie/1090007-first-shift.html" title="First Shift">
       <img src="https://image.tmdb.org/t/p/w500/ajsGI4JYaciPIe3gPgiJ3Vw5Vre.jpg" alt="First Shift" />
       <div class="movie-title">First Shift</div>
-    </a></div>
+    </a>
+  </div>
 </body>
 </html>
