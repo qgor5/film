@@ -1,73 +1,103 @@
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <title>Главная страница</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Популярные фильмы</title>
+    <style>
+        body {
+            background: #111;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: #222;
+            padding: 10px;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            flex-direction: column;
+            background-color: #333;
+        }
+        nav button {
+            background: none;
+            border: none;
+            color: white;
+            padding: 12px;
+            font-size: 18px;
+            text-align: left;
+            width: 100%;
+        }
+        nav button:hover {
+            background-color: #444;
+        }
+        .dropdown-content {
+            display: none;
+            flex-direction: column;
+            background-color: #444;
+        }
+        .dropdown:hover .dropdown-content {
+            display: flex;
+        }
+        .films {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        .film {
+            text-align: center;
+        }
+        .film img {
+            width: 100%;
+            border-radius: 8px;
+        }
+    </style>
 </head>
 <body>
-  
 <header>
-  <nav>
-    <ul class="menu">
-      <li><a href="/index.html">Главная</a></li>
-      <li class="dropdown">
-        <a href="#">Жанры ▾</a>
-        <ul class="dropdown-menu">
-          <li><a href="/genre/ужасы.html">Ужасы</a></li>
-          <li><a href="/genre/боевик.html">Боевик</a></li>
-          <li><a href="/genre/комедия.html">Комедия</a></li>
-          <li><a href="/genre/мультфильмы.html">Мультфильмы</a></li>
-        </ul>
-      </li>
-      <li class="dropdown">
-        <a href="#">Годы ▾</a>
-        <ul class="dropdown-menu">
-          <li><a href="/year/2024.html">2024</a></li>
-          <li><a href="/year/2023.html">2023</a></li>
-          <li><a href="/year/2022.html">2022</a></li>
-        </ul>
-      </li>
-    </ul>
-  </nav>
+    <h1>Популярные фильмы</h1>
 </header>
+<nav>
+    <div class="dropdown">
+        <button>Жанры ▼</button>
+        <div class="dropdown-content">
+            <button>Боевик</button>
+            <button>Комедия</button>
+            <button>Ужасы</button>
+            <button>Мультфильм</button>
+            <button>Фантастика</button>
+        </div>
+    </div>
+    <div class="dropdown">
+        <button>Годы ▼</button>
+        <div class="dropdown-content">
+            <button>2025</button>
+            <button>2024</button>
+            <button>2023</button>
+            <button>2022</button>
+        </div>
+    </div>
+</nav>
+<main class="films">
+    <div class="film">
+        <img src="https://image.tmdb.org/t/p/w500//tMO0YLXgJZBnIAjoTSz26zE33YN.jpg" alt="Пункт назначения">
+        <p>Пункт назначения: Узы крови</p>
+    </div>
+    <div class="film">
+        <img src="https://image.tmdb.org/t/p/w500//6oH378KUfCEitzJkm07r97L0RsZ.jpg" alt="Twisters">
+        <p>The Twisters</p>
+    </div>
+</main>
 
-<style>
-.menu {
-  display: flex;
-  gap: 20px;
-  list-style: none;
-  background: #222;
-  padding: 10px;
-}
-.menu a {
-  color: white;
-  text-decoration: none;
-}
-.dropdown {
-  position: relative;
-}
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  background: #333;
-  list-style: none;
-  padding: 10px;
-  margin: 0;
-}
-.dropdown:hover .dropdown-menu {
-  display: block;
-}
-.dropdown-menu li {
-  margin: 5px 0;
-}
-.dropdown-menu a {
-  color: #fff;
-}
-</style>
-
-  <main>
-    <h1>Добро пожаловать на наш сайт о фильмах!</h1>
-    <p>Выберите жанр или год, чтобы найти интересный фильм.</p>
-  </main>
+<!-- Дополнительный блок -->
+<section class="films">
+    <h2>Скоро в кино</h2>
+    <!-- Здесь потом ты вставишь карточки -->
+</section>
 </body>
 </html>
