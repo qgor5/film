@@ -1,171 +1,163 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Фильмы по жанрам с TMDb API</title>
-<style>
-  body { font-family: Arial, sans-serif; margin: 20px; }
-  #genre-menu { margin-bottom: 20px; }
-  .genre-link {
-    cursor: pointer;
-    margin-right: 10px;
-    color: blue;
-    text-decoration: underline;
-  }
-  .genre-link.active {
-    font-weight: bold;
-    color: darkred;
-    text-decoration: none;
-  }
-  #movies-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-  }
-  .movie {
-    border: 1px solid #ccc;
-    padding: 10px;
-    width: 180px;
-  }
-  .movie img {
-    width: 100%;
-    height: auto;
-  }
-  .movie h4 {
-    margin: 8px 0 5px 0;
-    font-size: 16px;
-  }
-  .movie p {
-    font-size: 14px;
-    color: #555;
-  }
-</style>
+  <meta charset="UTF-8" />
+  <title>TopKino — Трейлеры популярных фильмов</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      background: #111;
+      color: #eee;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+    .movie {
+      display: inline-block;
+      width: 140px;
+      margin: 10px;
+      text-align: center;
+      color: #eee;
+      text-decoration: none;
+    }
+    .movie img {
+      width: 140px;
+      height: 210px;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+    .movie-title {
+      margin-top: 5px;
+      font-size: 0.9rem;
+    }
+    /* Меню жанров и поиск */
+    #genre-menu {
+      margin-bottom: 20px;
+    }
+    #genre-menu a {
+      color: #eee;
+      text-decoration: none;
+      margin-right: 15px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    #genre-menu a:hover {
+      text-decoration: underline;
+    }
+    #search-input {
+      margin-bottom: 20px;
+      padding: 8px;
+      width: 100%;
+      max-width: 300px;
+      border-radius: 4px;
+      border: none;
+      font-size: 1rem;
+    }
+    /* ✅ Только это добавлено — адаптация под мобильные устройства */
+    @media (max-width: 600px) {
+      .movie {
+        width: 45vw;
+      }
+      .movie img {
+        width: 100%;
+        height: auto;
+      }
+    }
+    @media (max-width: 360px) {
+      .movie {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
 <body>
 
-<h1>Фильмы по жанрам</h1>
+  <h1>Популярные фильмы</h1>
 
-<div id="genre-menu">Загрузка жанров...</div>
+  <!-- Меню жанров -->
+  <nav id="genre-menu">
+    <a href="#" data-genre="all">Все</a>
+    <a href="#" data-genre="ужасы">Ужасы</a>
+    <a href="#" data-genre="боевик">Боевик</a>
+    <a href="#" data-genre="фантастика">Фантастика</a>
+    <a href="#" data-genre="комедия">Комедия</a>
+    <a href="#" data-genre="приключения">Приключения</a>
+    <!-- Добавь сюда другие жанры, если надо -->
+  </nav>
 
-<div id="movies-container">Выберите жанр выше, чтобы увидеть фильмы.</div>
+  <!-- Поиск -->
+  <input type="text" id="search-input" placeholder="Поиск фильмов..." />
 
-<script>
-  const API_KEY = '7cb67565ace3a08cd9d099c749787121';
-  const API_BASE = 'https://api.themoviedb.org/3';
-  const IMAGE_BASE = 'https://image.tmdb.org/t/p/w300';
+  <div class="movies-container">
 
-  const genreMenu = document.getElementById('genre-menu');
-  const moviesContainer = document.getElementById('movies-container');
+    <!-- 🔽 Твои фильмы ниже — добавлены data-genres для фильтрации -->
+    <a class="movie" href="movie/574475-punkt-naznacheniya-uzy-krovi.html" title="Пункт назначения: Узы крови" data-genres="ужасы,боевик">
+      <img src="https://image.tmdb.org/t/p/w500/A6SyVtXBxU6S5LfDg0tz7lUXhJq.jpg" alt="Пункт назначения: Узы крови" />
+      <div class="movie-title">Пункт назначения: Узы крови</div>
+    </a>
 
-  let genres = [];
+    <a class="movie" href="movie/1311844-the-twisters.html" title="The Twisters" data-genres="фантастика,приключения">
+      <img src="https://image.tmdb.org/t/p/w500/8OP3h80BzIDgmMNANVaYlQ6H4Oc.jpg" alt="The Twisters" />
+      <div class="movie-title">The Twisters</div>
+    </a>
 
-  // Загрузка жанров
-  async function loadGenres() {
-    try {
-      const res = await fetch(`${API_BASE}/genre/movie/list?api_key=${API_KEY}&language=ru`);
-      const data = await res.json();
-      genres = data.genres;
-      renderGenres();
-    } catch (e) {
-      genreMenu.textContent = 'Ошибка загрузки жанров.';
-      console.error(e);
+    <a class="movie" href="movie/552524-lilo-i-stich.html" title="Лило и Стич" data-genres="комедия,приключения">
+      <img src="https://image.tmdb.org/t/p/w500/bRB9ApGPhY7NtUQ33yZG828rbus.jpg" alt="Лило и Стич" />
+      <div class="movie-title">Лило и Стич</div>
+    </a>
+
+    <!-- Добавь data-genres для всех фильмов, чтобы фильтрация работала -->
+
+    <!-- остальные фильмы аналогично -->
+  </div>
+
+  <script>
+    // Функция фильтрации по жанрам и поиску
+    const genreLinks = document.querySelectorAll('#genre-menu a');
+    const movies = document.querySelectorAll('.movies-container .movie');
+    const searchInput = document.getElementById('search-input');
+
+    function filterMovies() {
+      const selectedGenre = document.querySelector('#genre-menu a.selected')?.getAttribute('data-genre') || 'all';
+      const searchTerm = searchInput.value.trim().toLowerCase();
+
+      movies.forEach(movie => {
+        const title = movie.querySelector('.movie-title').textContent.toLowerCase();
+        const genres = movie.getAttribute('data-genres').toLowerCase();
+
+        const matchesGenre = selectedGenre === 'all' || genres.includes(selectedGenre);
+        const matchesSearch = title.includes(searchTerm);
+
+        if (matchesGenre && matchesSearch) {
+          movie.style.display = 'inline-block';
+        } else {
+          movie.style.display = 'none';
+        }
+      });
     }
-  }
 
-  // Рендер меню жанров
-  function renderGenres() {
-    genreMenu.innerHTML = '';
-    // Добавим кнопку "Все"
-    const allBtn = document.createElement('span');
-    allBtn.textContent = 'Все';
-    allBtn.className = 'genre-link active';
-    allBtn.dataset.genreId = 'all';
-    genreMenu.appendChild(allBtn);
+    // Обработка кликов по жанрам
+    genreLinks.forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
 
-    allBtn.addEventListener('click', () => {
-      setActiveGenre('all');
-      loadMovies();
-    });
+        // Убираем выделение со всех
+        genreLinks.forEach(l => l.classList.remove('selected'));
 
-    genres.forEach(genre => {
-      const span = document.createElement('span');
-      span.textContent = genre.name;
-      span.className = 'genre-link';
-      span.dataset.genreId = genre.id;
-      genreMenu.appendChild(span);
+        // Добавляем выделение к текущему
+        link.classList.add('selected');
 
-      span.addEventListener('click', () => {
-        setActiveGenre(genre.id);
-        loadMovies(genre.id);
+        filterMovies();
       });
     });
-  }
 
-  // Установить активный жанр в меню
-  function setActiveGenre(genreId) {
-    const links = document.querySelectorAll('.genre-link');
-    links.forEach(link => {
-      if (link.dataset.genreId == genreId) {
-        link.classList.add('active');
-      } else {
-        link.classList.remove('active');
-      }
+    // Обработка ввода в поиск
+    searchInput.addEventListener('input', () => {
+      filterMovies();
     });
-  }
 
-  // Загрузка фильмов по жанру (или всех если genreId не указан)
-  async function loadMovies(genreId = 'all') {
-    moviesContainer.innerHTML = 'Загрузка фильмов...';
-
-    let url;
-    if (genreId === 'all') {
-      // Популярные фильмы
-      url = `${API_BASE}/movie/popular?api_key=${API_KEY}&language=ru&page=1`;
-    } else {
-      // Фильмы по жанру
-      url = `${API_BASE}/discover/movie?api_key=${API_KEY}&language=ru&with_genres=${genreId}&sort_by=popularity.desc&page=1`;
-    }
-
-    try {
-      const res = await fetch(url);
-      const data = await res.json();
-      renderMovies(data.results);
-    } catch (e) {
-      moviesContainer.innerHTML = 'Ошибка загрузки фильмов.';
-      console.error(e);
-    }
-  }
-
-  // Рендер списка фильмов
-  function renderMovies(movies) {
-    if (!movies || movies.length === 0) {
-      moviesContainer.innerHTML = '<p>Фильмы не найдены.</p>';
-      return;
-    }
-
-    moviesContainer.innerHTML = '';
-    movies.forEach(movie => {
-      const div = document.createElement('div');
-      div.className = 'movie';
-
-      const posterPath = movie.poster_path ? IMAGE_BASE + movie.poster_path : 'https://via.placeholder.com/300x450?text=No+Image';
-
-      div.innerHTML = `
-        <img src="${posterPath}" alt="${movie.title}" />
-        <h4>${movie.title}</h4>
-        <p>Рейтинг: ${movie.vote_average} ⭐</p>
-        <p>${movie.overview.length > 100 ? movie.overview.slice(0, 100) + '...' : movie.overview}</p>
-      `;
-
-      moviesContainer.appendChild(div);
-    });
-  }
-
-  // Инициализация
-  loadGenres().then(() => loadMovies());
-
-</script>
-
+    // Изначально выбрана "Все"
+    document.querySelector('#genre-menu a[data-genre="all"]').classList.add('selected');
+  </script>
 </body>
 </html>
