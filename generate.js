@@ -152,7 +152,7 @@ async function main() {
     const movies = popularData.results;
 
     // Для отслеживания ссылок в sitemap
-    const sitemapUrls = ['https://yourdomain.com/index.html'];
+    const sitemapUrls = ['https://kinotrailers.netlify.app/index.html'];
 
     // Генерируем страницы фильмов
     for (const movie of movies) {
@@ -171,7 +171,7 @@ async function main() {
       await fs.writeFile(movieFilePath, html, 'utf-8');
       console.log(`Сгенерирована страница: ${movieFileName}`);
 
-      sitemapUrls.push(`https://yourdomain.com/movie/${movieFileName}`);
+      sitemapUrls.push(`https://kinotrailers.netlify.app/movie/${movieFileName}`);
     }
 
     // Генерируем главную страницу
