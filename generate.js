@@ -152,7 +152,7 @@ async function main() {
     const movies = popularData.results;
 
     // Для отслеживания ссылок в sitemap
-    const sitemapUrls = ['https://yourdomain.com/index.html'];
+    const sitemapUrls = ['https://kinotrailers.netlify.app/index.html'];
 
     // Генерируем страницы фильмов
     for (const movie of movies) {
