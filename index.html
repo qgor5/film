@@ -10,17 +10,84 @@
       color: #eee;
       font-family: Arial, sans-serif;
       margin: 0;
-      padding: 20px;
+      padding: 0;
     }
+
+    header {
+      background-color: #222;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.2rem;
+      color: #fff;
+    }
+
+    nav {
+      position: relative;
+    }
+
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .nav-toggle span {
+      background: #fff;
+      height: 3px;
+      margin: 4px 0;
+      width: 25px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 15px;
+    }
+
+    .nav-links a {
+      color: #eee;
+      text-decoration: none;
+    }
+
+    .genre-dropdown {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: #333;
+      display: none;
+      flex-direction: column;
+      max-height: 300px;
+      overflow-y: auto;
+      z-index: 1000;
+    }
+
+    .nav-links .genres:hover .genre-dropdown {
+      display: flex;
+    }
+
+    .genre-dropdown a {
+      padding: 5px 10px;
+      color: #eee;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
     h1 {
       font-size: 1.5rem;
-      margin-bottom: 20px;
+      margin: 20px;
     }
+
     .movies-container {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
+      padding: 20px;
     }
+
     .movie {
       width: 140px;
       margin: 10px;
@@ -28,98 +95,50 @@
       color: #eee;
       text-decoration: none;
     }
+
     .movie img {
       width: 100%;
       height: 210px;
       object-fit: cover;
       border-radius: 6px;
     }
+
     .movie-title {
       margin-top: 5px;
       font-size: 0.9rem;
     }
+
     @media (max-width: 600px) {
       .movie {
         width: calc(50% - 20px);
         margin: 10px;
       }
+
       .movie img {
         height: auto;
         aspect-ratio: 2/3;
       }
+
       .movie-title {
         font-size: 0.85rem;
       }
-    }
-    header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background: #222;
-      padding: 10px 20px;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-    .logo {
-      color: #fff;
-      font-size: 1.2rem;
-      text-decoration: none;
-    }
-    .nav-toggle {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-    }
-    .nav-toggle span {
-      background: #fff;
-      height: 3px;
-      width: 25px;
-      margin: 3px 0;
-    }
-    nav {
-      display: flex;
-      gap: 15px;
-    }
-    nav a {
-      color: #eee;
-      text-decoration: none;
-    }
-    .genres-dropdown {
-      position: relative;
-    }
-    .genres-list {
-      display: none;
-      position: absolute;
-      background: #222;
-      top: 100%;
-      left: 0;
-      z-index: 999;
-      padding: 10px;
-      border-radius: 6px;
-    }
-    .genres-list a {
-      display: block;
-      padding: 5px;
-    }
-    .genres-dropdown:hover .genres-list {
-      display: block;
-    }
-    @media (max-width: 768px) {
-      nav {
+
+      .nav-toggle {
+        display: flex;
+      }
+
+      .nav-links {
         display: none;
         flex-direction: column;
-        background: #222;
         position: absolute;
         top: 60px;
         right: 20px;
+        background-color: #222;
         padding: 10px;
-        border-radius: 6px;
+        z-index: 999;
       }
-      nav.active {
-        display: flex;
-      }
-      .nav-toggle {
+
+      .nav-links.active {
         display: flex;
       }
     }
@@ -127,40 +146,54 @@
 </head>
 <body>
   <header>
-    <a href="index.html" class="logo">TopKino</a>
-    <div class="nav-toggle" onclick="document.querySelector('nav').classList.toggle('active')">
-      <span></span><span></span><span></span>
+    <div class="logo">TopKino</div>
+    <div class="nav-toggle" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
     <nav>
-      <a href="index.html">Главная</a>
-      <div class="genres-dropdown">
-        <a href="#">Жанры</a>
-        <div class="genres-list" id="genreList"></div>
+      <div class="nav-links" id="nav-links">
+        <a href="index.html">Главная</a>
+        <div class="genres">
+          <a href="#">Жанры</a>
+          <div class="genre-dropdown" id="genre-list"></div>
+        </div>
+        <a href="#">Блог</a>
       </div>
-      <a href="#">Блог</a>
     </nav>
   </header>
+
   <h1>Популярные фильмы</h1>
+
   <div class="movies-container">
-    <!-- фильмы как есть -->
+    <!-- СЮДА ОСТАВЛЯЕМ ВСЕ КАРТОЧКИ ФИЛЬМОВ БЕЗ ИЗМЕНЕНИЙ -->
   </div>
+
   <script>
-    const API_KEY = '7cb67565ace3a08cd9d099c749787121';
-    fetch('https://api.themoviedb.org/3/genre/movie/list?language=ru', {
-      headers: {
-        Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI3Y2I2NzU2NWFjZTNhMDhjZDlkMDk5Yzc0OTc4NzEyMSIsIm5iZiI6MTcyMjEwNzE3Mi41MzYsInN1YiI6IjY2YTU0NTI0MGRhOWFkYWQzMTg2ZTU5ZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.q3l_-tPvyWXqxB_nDMPJUEMnjFJz_VlwXFPTcnUQHjM'
-      }
-    })
-    .then(res => res.json())
-    .then(data => {
-      const list = document.getElementById('genreList');
+    function toggleMenu() {
+      const links = document.getElementById('nav-links');
+      links.classList.toggle('active');
+    }
+
+    async function fetchGenres() {
+      const url = 'https://api.themoviedb.org/3/genre/movie/list?language=ru';
+      const response = await fetch(url, {
+        headers: {
+          Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI3Y2I2NzU2NWFjZTNhMDhjZDlkMDk5Yzc0OTc4NzEyMSIsIm5iZiI6MTcyMjEwNzE3Mi41MzYsInN1YiI6IjY2YTU0NTI0MGRhOWFkYWQzMTg2ZTU5ZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.q3l_-tPvyWXqxB_nDMPJUEMnjFJz_VlwXFPTcnUQHjM'
+        }
+      });
+      const data = await response.json();
+      const genreList = document.getElementById('genre-list');
       data.genres.forEach(genre => {
         const a = document.createElement('a');
         a.href = `genre.html?id=${genre.id}`;
         a.textContent = genre.name;
-        list.appendChild(a);
+        genreList.appendChild(a);
       });
-    });
+    }
+
+    fetchGenres();
   </script>
 </body>
 </html>
