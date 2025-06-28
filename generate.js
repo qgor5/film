@@ -73,7 +73,7 @@ function generateMoviePageHtml(movie, credits, videos) {
   <meta property="og:description" content="${(movie.overview || '').substring(0, 160).replace(/"/g, "'")}" />
   <meta property="og:image" content="${poster}" />
   <meta property="og:type" content="video.movie" />
-  <link rel="canonical" href="https://yourdomain.com/movie/${movie.id}-${transliterate(title)}.html" />
+  <link rel="canonical" href="https://kinotrailers.netlify.app/movie/${movie.id}-${transliterate(title)}.html" />
   <style>
     body { background:#111; color:#eee; font-family: Arial, sans-serif; margin:0; padding:20px; }
     header { background:#222; padding:10px; text-align:center; }
