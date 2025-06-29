@@ -5,9 +5,6 @@
   <title>TopKino — Трейлеры популярных фильмов</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
-    * {
-      box-sizing: border-box;
-    }
     body {
       background: #111;
       color: #eee;
@@ -15,99 +12,102 @@
       margin: 0;
       padding: 0;
     }
-    header {
+
+    /* Навигация */
+    .nav {
       background: #222;
       padding: 10px 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
-    header h1 {
-      font-size: 1.2rem;
+
+    .nav .logo {
+      font-size: 1.2em;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    .nav ul {
+      display: flex;
+      gap: 15px;
+      list-style: none;
       margin: 0;
+      padding: 0;
     }
-    nav {
-      position: relative;
+
+    .nav a {
+      color: #eee;
+      text-decoration: none;
     }
+
     .menu-toggle {
       display: none;
       flex-direction: column;
-      gap: 4px;
       cursor: pointer;
     }
-    .menu-toggle span {
-      width: 25px;
+
+    .menu-toggle div {
+      background: #fff;
       height: 3px;
-      background: white;
+      width: 25px;
+      margin: 4px 0;
     }
-    .menu {
-      display: flex;
-      gap: 15px;
-    }
-    .dropdown {
-      position: relative;
-    }
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: #333;
-      min-width: 160px;
-      z-index: 1;
-      top: 30px;
-    }
-    .dropdown-content a {
-      color: white;
-      padding: 10px;
-      text-decoration: none;
-      display: block;
-    }
-    .dropdown:hover .dropdown-content {
-      display: block;
-    }
+
     @media (max-width: 768px) {
-      .menu {
+      .nav ul {
         display: none;
         flex-direction: column;
         background: #222;
-        position: absolute;
-        top: 50px;
-        right: 0;
         width: 100%;
       }
-      .menu.active {
+
+      .nav ul.active {
         display: flex;
       }
+
       .menu-toggle {
         display: flex;
       }
     }
+
+    h1 {
+      text-align: center;
+      margin: 20px 0;
+    }
+
     .movies-container {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 16px;
-      padding: 20px;
+      padding: 0 20px 20px;
     }
+
     .movie {
       width: 45%;
       text-align: center;
       color: #eee;
       text-decoration: none;
     }
+
     .movie img {
       width: 100%;
       height: auto;
       object-fit: cover;
       border-radius: 6px;
     }
+
     .movie-title {
       margin-top: 5px;
       font-size: 0.9rem;
     }
+
     @media (min-width: 600px) {
       .movie {
         width: 140px;
       }
+
       .movie img {
         height: 210px;
       }
@@ -115,47 +115,39 @@
   </style>
 </head>
 <body>
-  <header>
-    <h1>TopKino</h1>
+
+  <nav class="nav">
+    <div class="logo">TopKino</div>
     <div class="menu-toggle" onclick="toggleMenu()">
-      <span></span>
-      <span></span>
-      <span></span>
+      <div></div>
+      <div></div>
+      <div></div>
     </div>
-    <nav>
-      <div class="menu" id="menu">
-        <a href="#">Главная</a>
-        <div class="dropdown">
-          <a href="#">Жанры</a>
-          <div class="dropdown-content">
-            <a href="#">Боевик</a>
-            <a href="#">Фантастика</a>
-            <a href="#">Ужасы</a>
-            <a href="#">Драма</a>
-          </div>
-        </div>
-        <div class="dropdown">
-          <a href="#">Годы</a>
-          <div class="dropdown-content">
-            <a href="#">2025</a>
-            <a href="#">2024</a>
-            <a href="#">2023</a>
-          </div>
-        </div>
-        <a href="#">Блог</a>
-      </div>
-    </nav>
-  </header>
-  <h1 style="margin-top: 10px; text-align: center;">Популярные фильмы</h1>
+    <ul id="nav-menu">
+      <li><a href="index.html">Главная</a></li>
+      <li><a href="genres.html">Жанры</a></li>
+      <li><a href="years.html">Фильмы по годам</a></li>
+      <li><a href="blog.html">Блог</a></li>
+    </ul>
+  </nav>
+
+  <h1>Популярные фильмы</h1>
+
   <div class="movies-container">
-    <!-- Сюда вставляются 24 фильма как в твоём примере -->
-    <!-- ... (сюда вставь оставшиеся <a class="movie"> как у тебя) ... -->
+    <!-- Здесь остаётся твой список фильмов. Ты можешь просто скопировать и вставить 24 элемента <a class="movie">...</a> -->
+    <!-- Пример (1 из 24) -->
+    <a class="movie" href="movie/574475-punkt-naznacheniya-uzy-krovi.html" title="Пункт назначения: Узы крови">
+      <img src="https://image.tmdb.org/t/p/w500/A6SyVtXBxU6S5LfDg0tz7lUXhJq.jpg" alt="Пункт назначения: Узы крови" />
+      <div class="movie-title">Пункт назначения: Узы крови</div>
+    </a>
+    <!-- Добавь оставшиеся 23 фильма сюда -->
   </div>
+
   <script>
     function toggleMenu() {
-      const menu = document.getElementById('menu');
-      menu.classList.toggle('active');
+      document.getElementById('nav-menu').classList.toggle('active');
     }
   </script>
+
 </body>
 </html>
