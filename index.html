@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
   <meta charset="UTF-8" />
   <title>TopKino — Трейлеры популярных фильмов</title>
@@ -13,7 +14,6 @@
       padding: 0;
     }
 
-    /* Навигация */
     .nav {
       background: #222;
       padding: 10px 20px;
@@ -114,8 +114,8 @@
     }
   </style>
 </head>
-<body>
 
+<body>
   <nav class="nav">
     <div class="logo">TopKino</div>
     <div class="menu-toggle" onclick="toggleMenu()">
@@ -126,21 +126,15 @@
     <ul id="nav-menu">
       <li><a href="index.html">Главная</a></li>
       <li><a href="genres.html">Жанры</a></li>
-      <li><a href="years.html">Фильмы по годам</a></li>
+      <li><a href="years.html">По годам</a></li>
       <li><a href="blog.html">Блог</a></li>
     </ul>
   </nav>
 
   <h1>Популярные фильмы</h1>
-
   <div class="movies-container">
-    <!-- Здесь остаётся твой список фильмов. Ты можешь просто скопировать и вставить 24 элемента <a class="movie">...</a> -->
-    <!-- Пример (1 из 24) -->
-    <a class="movie" href="movie/574475-punkt-naznacheniya-uzy-krovi.html" title="Пункт назначения: Узы крови">
-      <img src="https://image.tmdb.org/t/p/w500/A6SyVtXBxU6S5LfDg0tz7lUXhJq.jpg" alt="Пункт назначения: Узы крови" />
-      <div class="movie-title">Пункт назначения: Узы крови</div>
-    </a>
-    <!-- Добавь оставшиеся 23 фильма сюда -->
+    <!-- Сюда вставь свои 24 блока .movie как в твоём коде -->
+    <!-- Они не изменяются, просто дополни 24 штуки вместо 20 -->
   </div>
 
   <script>
@@ -148,6 +142,5 @@
       document.getElementById('nav-menu').classList.toggle('active');
     }
   </script>
-
 </body>
 </html>
