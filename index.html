@@ -2,50 +2,6 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <header>
-  <div class="logo">TopKino</div>
-  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-  <nav id="main-nav">
-    <div class="dropdown">
-      <a href="#">Жанры</a>
-      <div class="dropdown-content">
-        <a href="/genre/action.html">Боевик</a>
-        <a href="/genre/comedy.html">Комедия</a>
-        <a href="/genre/horror.html">Ужасы</a>
-        <a href="/genre/animation.html">Мультфильмы</a>
-        <a href="/genre/science-fiction.html">Фантастика</a>
-        <a href="/genre/drama.html">Драма</a>
-        <a href="/genre/thriller.html">Триллер</a>
-        <a href="/genre/family.html">Семейные</a>
-        <a href="/genre/crime.html">Криминал</a>
-        <a href="/genre/documentary.html">Документальные</a>
-      </div>
-    </div>
-    <div class="dropdown">
-      <a href="#">Годы</a>
-      <div class="dropdown-content">
-        <a href="/year/2025.html">2025</a>
-        <a href="/year/2024.html">2024</a>
-        <a href="/year/2023.html">2023</a>
-        <a href="/year/2022.html">2022</a>
-        <a href="/year/2021.html">2021</a>
-        <a href="/year/2020.html">2020</a>
-        <a href="/year/2019.html">2019</a>
-        <a href="/year/2018.html">2018</a>
-        <a href="/year/2017.html">2017</a>
-        <a href="/year/2016.html">2016</a>
-        <a href="/year/2015.html">2015</a>
-      </div>
-    </div>
-    <a href="/blog.html">Блог</a>
-  </nav>
-</header>
-<script>
-  function toggleMenu() {
-    document.getElementById('main-nav').classList.toggle('active');
-  }
-</script>
-
   <title>TopKino — Трейлеры популярных фильмов</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
@@ -96,72 +52,6 @@
       margin-top: 5px;
       font-size: 0.9rem;
     }
-    header {
-  background: #222;
-  padding: 10px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-}
-.logo {
-  font-size: 1.5rem;
-  color: #fff;
-}
-.menu-toggle {
-  display: none;
-  font-size: 1.8rem;
-  cursor: pointer;
-  color: #fff;
-}
-nav {
-  display: flex;
-  gap: 15px;
-}
-nav a {
-  color: #eee;
-  text-decoration: none;
-  padding: 5px 10px;
-}
-.dropdown {
-  position: relative;
-}
-.dropdown-content {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background: #333;
-  padding: 10px;
-  z-index: 1;
-  min-width: 150px;
-}
-.dropdown-content a {
-  display: block;
-  padding: 5px;
-}
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-@media (max-width: 768px) {
-  nav {
-    display: none;
-    flex-direction: column;
-    background: #222;
-    width: 100%;
-    margin-top: 10px;
-  }
-  nav.active {
-    display: flex;
-  }
-  .menu-toggle {
-    display: block;
-  }
-  .dropdown-content {
-    position: static;
-  }
-}
-
   </style>
 </head>
 <body>
