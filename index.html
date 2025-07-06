@@ -5,15 +5,61 @@
   <title>TopKino — Трейлеры популярных фильмов</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
-    body { background:#111; color:#eee; font-family: Arial, sans-serif; margin:0; padding:20px; }
-    .movie { display:inline-block; width:140px; margin:10px; text-align:center; color:#eee; text-decoration:none; }
-    .movie img { width:140px; height:210px; object-fit: cover; border-radius: 6px; }
-    .movie-title { margin-top:5px; font-size:0.9rem; }
+    body {
+      background: #111;
+      color: #eee;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 1.8rem;
+    }
+
+    .movie-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); /* 2 на телефоне */
+      gap: 16px;
+    }
+
+    @media (min-width: 768px) {
+      .movie-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 на планшете */
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .movie-grid {
+        grid-template-columns: repeat(5, 1fr); /* 5 на компьютере */
+      }
+    }
+
+    .movie {
+      text-align: center;
+      color: #eee;
+      text-decoration: none;
+    }
+
+    .movie img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+
+    .movie-title {
+      margin-top: 5px;
+      font-size: 0.9rem;
+    }
   </style>
 </head>
 <body>
+
   <h1>Популярные фильмы</h1>
+
   <div class="movie-grid">
+    <!-- Вставлены все твои карточки фильмов -->
     <a class="movie" href="movie/541671-balerina.html" title="Балерина">
       <img src="https://image.tmdb.org/t/p/w500/oKD6ggXEN1WGPPDiVAuOfdDLBNv.jpg" alt="Балерина" />
       <div class="movie-title">Балерина</div>
