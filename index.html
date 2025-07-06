@@ -1,117 +1,268 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TopKino — Главная</title>
+  <meta charset="UTF-8" />
+  <header>
+  <div class="logo">TopKino</div>
+  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+  <nav id="main-nav">
+    <div class="dropdown">
+      <a href="#">Жанры</a>
+      <div class="dropdown-content">
+        <a href="/genre/action.html">Боевик</a>
+        <a href="/genre/comedy.html">Комедия</a>
+        <a href="/genre/horror.html">Ужасы</a>
+        <a href="/genre/animation.html">Мультфильмы</a>
+        <a href="/genre/science-fiction.html">Фантастика</a>
+        <a href="/genre/drama.html">Драма</a>
+        <a href="/genre/thriller.html">Триллер</a>
+        <a href="/genre/family.html">Семейные</a>
+        <a href="/genre/crime.html">Криминал</a>
+        <a href="/genre/documentary.html">Документальные</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <a href="#">Годы</a>
+      <div class="dropdown-content">
+        <a href="/year/2025.html">2025</a>
+        <a href="/year/2024.html">2024</a>
+        <a href="/year/2023.html">2023</a>
+        <a href="/year/2022.html">2022</a>
+        <a href="/year/2021.html">2021</a>
+        <a href="/year/2020.html">2020</a>
+        <a href="/year/2019.html">2019</a>
+        <a href="/year/2018.html">2018</a>
+        <a href="/year/2017.html">2017</a>
+        <a href="/year/2016.html">2016</a>
+        <a href="/year/2015.html">2015</a>
+      </div>
+    </div>
+    <a href="/blog.html">Блог</a>
+  </nav>
+</header>
+
+  <title>TopKino — Трейлеры популярных фильмов</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     body {
-      margin: 0;
-      font-family: Arial, sans-serif;
       background: #111;
       color: #eee;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
     }
 
-    header {
-      background: #222;
-      padding: 10px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+    h1 {
+      font-size: 1.8rem;
     }
 
-    .logo {
-      font-size: 1.5rem;
+    .movie-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); /* 2 на телефоне */
+      gap: 16px;
     }
 
-    nav {
-      display: flex;
-      gap: 15px;
+    @media (min-width: 768px) {
+      .movie-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 на планшете */
+      }
     }
 
-    .menu-toggle {
-      display: none;
-      font-size: 1.5rem;
-      cursor: pointer;
+    @media (min-width: 1024px) {
+      .movie-grid {
+        grid-template-columns: repeat(5, 1fr); /* 5 на компьютере */
+      }
     }
 
-    .dropdown {
-      position: relative;
-    }
-
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      background: #333;
-      padding: 10px;
-      z-index: 1;
-    }
-
-    .dropdown-content a {
-      display: block;
-      padding: 5px 10px;
+    .movie {
+      text-align: center;
       color: #eee;
       text-decoration: none;
     }
 
-    .dropdown:hover .dropdown-content {
-      display: block;
+    .movie img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      border-radius: 6px;
     }
 
-    @media (max-width: 768px) {
-      nav {
-        display: none;
-        flex-direction: column;
-        background: #222;
-        position: absolute;
-        top: 50px;
-        left: 0;
-        right: 0;
-      }
-      nav.active {
-        display: flex;
-      }
-      .menu-toggle {
-        display: block;
-      }
+    .movie-title {
+      margin-top: 5px;
+      font-size: 0.9rem;
     }
+    header {
+  background: #222;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.logo {
+  font-size: 1.5rem;
+  color: #fff;
+}
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #fff;
+}
+nav {
+  display: flex;
+  gap: 15px;
+}
+nav a {
+  color: #eee;
+  text-decoration: none;
+  padding: 5px 10px;
+}
+.dropdown {
+  position: relative;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #333;
+  padding: 10px;
+  z-index: 1;
+  min-width: 150px;
+}
+.dropdown-content a {
+  display: block;
+  padding: 5px;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+@media (max-width: 768px) {
+  nav {
+    display: none;
+    flex-direction: column;
+    background: #222;
+    width: 100%;
+    margin-top: 10px;
+  }
+  nav.active {
+    display: flex;
+  }
+  .menu-toggle {
+    display: block;
+  }
+  .dropdown-content {
+    position: static;
+  }
+}
+
   </style>
 </head>
 <body>
-  <header>
-    <div class="logo">TopKino</div>
-    <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
-    <nav id="main-nav">
-      <div class="dropdown">
-        <a href="#">Жанры</a>
-        <div class="dropdown-content">
-          <a href="/genre/action.html">Боевик</a>
-          <a href="/genre/comedy.html">Комедия</a>
-          <a href="/genre/horror.html">Ужасы</a>
-          <a href="/genre/animation.html">Мультфильмы</a>
-        </div>
-      </div>
-      <div class="dropdown">
-        <a href="#">Годы</a>
-        <div class="dropdown-content">
-          <a href="/year/2025.html">2025</a>
-          <a href="/year/2024.html">2024</a>
-          <a href="/year/2023.html">2023</a>
-          <a href="/year/2022.html">2022</a>
-        </div>
-      </div>
-      <a href="/blog.html">Блог</a>
-    </nav>
-  </header>
 
-  <script>
-    function toggleMenu() {
-      document.getElementById('main-nav').classList.toggle('active');
-    }
-  </script>
+  <h1>Популярные фильмы</h1>
 
-  <!-- Тут будет блок с фильмами -->
+  <div class="movie-grid">
+    <!-- Вставлены все твои карточки фильмов -->
+    <a class="movie" href="movie/541671-balerina.html" title="Балерина">
+      <img src="https://image.tmdb.org/t/p/w500/oKD6ggXEN1WGPPDiVAuOfdDLBNv.jpg" alt="Балерина" />
+      <div class="movie-title">Балерина</div>
+    </a>
+
+    <a class="movie" href="movie/986056-gromoverzhtsy.html" title="Громовержцы*">
+      <img src="https://image.tmdb.org/t/p/w500/l4UtldCA7OgORWY9UcyWBqaHWHF.jpg" alt="Громовержцы*" />
+      <div class="movie-title">Громовержцы*</div>
+    </a>
+
+    <a class="movie" href="movie/846422-bessmertnaya-gvardiya-2.html" title="Бессмертная гвардия 2">
+      <img src="https://image.tmdb.org/t/p/w500/b1F05dWGFA4VlE0DlMg6hhCmOOW.jpg" alt="Бессмертная гвардия 2" />
+      <div class="movie-title">Бессмертная гвардия 2</div>
+    </a>
+
+    <a class="movie" href="movie/749170-glavy-gosudarstv.html" title="Главы государств">
+      <img src="https://image.tmdb.org/t/p/w500/j2IEKt3uWGFrHxWpPY9mVSL3lHV.jpg" alt="Главы государств" />
+      <div class="movie-title">Главы государств</div>
+    </a>
+
+    <a class="movie" href="movie/1119878-ledyanoy-drayv-vozmezdie.html" title="Ледяной драйв: Возмездие">
+      <img src="https://image.tmdb.org/t/p/w500/jVcQchW7EXT8MXk1C4XaUpqHhRC.jpg" alt="Ледяной драйв: Возмездие" />
+      <div class="movie-title">Ледяной драйв: Возмездие</div>
+    </a>
+
+    <a class="movie" href="movie/574475-punkt-naznacheniya-uzy-krovi.html" title="Пункт назначения: Узы крови">
+      <img src="https://image.tmdb.org/t/p/w500/A6SyVtXBxU6S5LfDg0tz7lUXhJq.jpg" alt="Пункт назначения: Узы крови" />
+      <div class="movie-title">Пункт назначения: Узы крови</div>
+    </a>
+
+    <a class="movie" href="movie/1234821-mir-yurskogo-perioda-vozrozhdenie.html" title="Мир Юрского периода: Возрождение">
+      <img src="https://image.tmdb.org/t/p/w500/iIk5nWcHuqTMLrz1yrwIWcmwTOM.jpg" alt="Мир Юрского периода: Возрождение" />
+      <div class="movie-title">Мир Юрского периода: Возрождение</div>
+    </a>
+
+    <a class="movie" href="movie/552524-lilo-i-stich.html" title="Лило и Стич">
+      <img src="https://image.tmdb.org/t/p/w500/6oStXJKWII37FkiT668C4GD3F5V.jpg" alt="Лило и Стич" />
+      <div class="movie-title">Лило и Стич</div>
+    </a>
+
+    <a class="movie" href="movie/1151031-verni-ee-iz-mertvyh.html" title="Верни её из мёртвых">
+      <img src="https://image.tmdb.org/t/p/w500/bXUHpvzSevyjjKgyNt7cfdehhrR.jpg" alt="Верни её из мёртвых" />
+      <div class="movie-title">Верни её из мёртвых</div>
+    </a>
+
+    <a class="movie" href="movie/803796-keypop-ohotnitsy-na-demonov.html" title="Кейпоп-охотницы на демонов">
+      <img src="https://image.tmdb.org/t/p/w500/7dGazFZ1qYhs3GpcJj41BrpBrSE.jpg" alt="Кейпоп-охотницы на демонов" />
+      <div class="movie-title">Кейпоп-охотницы на демонов</div>
+    </a>
+
+    <a class="movie" href="movie/1087192-kak-priruchit-drakona.html" title="Как Приручить Дракона">
+      <img src="https://image.tmdb.org/t/p/w500/tLs6YQ6AAFNNRwuJ1USI4KrLJCB.jpg" alt="Как Приручить Дракона" />
+      <div class="movie-title">Как Приручить Дракона</div>
+    </a>
+
+    <a class="movie" href="movie/911430-formula-1.html" title="Формула 1">
+      <img src="https://image.tmdb.org/t/p/w500/hqegP9dEXPN4SWyYZmNlXRA6vdW.jpg" alt="Формула 1" />
+      <div class="movie-title">Формула 1</div>
+    </a>
+
+    <a class="movie" href="movie/1278950-ritual.html" title="Ритуал">
+      <img src="https://image.tmdb.org/t/p/w500/jY5P1zdmIFyNnNXuf55brFqmWpH.jpg" alt="Ритуал" />
+      <div class="movie-title">Ритуал</div>
+    </a>
+
+    <a class="movie" href="movie/1090007-first-shift.html" title="First Shift">
+      <img src="https://image.tmdb.org/t/p/w500/ajsGI4JYaciPIe3gPgiJ3Vw5Vre.jpg" alt="First Shift" />
+      <div class="movie-title">First Shift</div>
+    </a>
+
+    <a class="movie" href="movie/1246369-.html" title="室町無頼">
+      <img src="https://image.tmdb.org/t/p/w500/6U0i0HsSCvhRW4IpGzdead6QRo3.jpg" alt="室町無頼" />
+      <div class="movie-title">室町無頼</div>
+    </a>
+
+    <a class="movie" href="movie/1311844-the-twisters.html" title="The Twisters">
+      <img src="https://image.tmdb.org/t/p/w500/8OP3h80BzIDgmMNANVaYlQ6H4Oc.jpg" alt="The Twisters" />
+      <div class="movie-title">The Twisters</div>
+    </a>
+
+    <a class="movie" href="movie/605722-dolgiy-put.html" title="Долгий путь">
+      <img src="https://image.tmdb.org/t/p/w500/m5NKltgQqqyoWJNuK18IqEGRG7J.jpg" alt="Долгий путь" />
+      <div class="movie-title">Долгий путь</div>
+    </a>
+
+    <a class="movie" href="movie/1412113-igra-v-kalmara-kak-sozdavalsya-2-sezon.html" title="Игра в кальмара. Как создавался 2 сезон">
+      <img src="https://image.tmdb.org/t/p/w500/yQGaui0bQ5Ai3KIFBB45nTeIqad.jpg" alt="Игра в кальмара. Как создавался 2 сезон" />
+      <div class="movie-title">Игра в кальмара. Как создавался 2 сезон</div>
+    </a>
+
+    <a class="movie" href="movie/1100988-28-let-spustya.html" title="28 лет спустя">
+      <img src="https://image.tmdb.org/t/p/w500/59trRsv4JLZN5MCUrdMnLka0IXk.jpg" alt="28 лет спустя" />
+      <div class="movie-title">28 лет спустя</div>
+    </a>
+
+    <a class="movie" href="movie/1442776-kuang-bao-ju-xi.html" title="Kuang Bao Ju Xi">
+      <img src="https://image.tmdb.org/t/p/w500/9TFaFsSXedaALXTzba349euDeoY.jpg" alt="Kuang Bao Ju Xi" />
+      <div class="movie-title">Kuang Bao Ju Xi</div>
+    </a></div>
 </body>
 </html>
