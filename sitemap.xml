@@ -26,10 +26,6 @@
   </url>
 
   <url>
-    <loc>https://kinotrailers.netlify.app/movie/1151334-eniki-beniki.html</loc>
-  </url>
-
-  <url>
     <loc>https://kinotrailers.netlify.app/movie/1234821-mir-yurskogo-perioda-vozrozhdenie.html</loc>
   </url>
 
@@ -38,7 +34,7 @@
   </url>
 
   <url>
-    <loc>https://kinotrailers.netlify.app/movie/1083433-ya-znayu-chto-vy-sdelali-proshlym-letom.html</loc>
+    <loc>https://kinotrailers.netlify.app/movie/1151334-eniki-beniki.html</loc>
   </url>
 
   <url>
@@ -46,7 +42,7 @@
   </url>
 
   <url>
-    <loc>https://kinotrailers.netlify.app/movie/1175942-plohie-parni-2.html</loc>
+    <loc>https://kinotrailers.netlify.app/movie/1083433-ya-znayu-chto-vy-sdelali-proshlym-letom.html</loc>
   </url>
 
   <url>
@@ -54,7 +50,19 @@
   </url>
 
   <url>
+    <loc>https://kinotrailers.netlify.app/movie/1175942-plohie-parni-2.html</loc>
+  </url>
+
+  <url>
+    <loc>https://kinotrailers.netlify.app/movie/803796-keypop-ohotnitsy-na-demonov.html</loc>
+  </url>
+
+  <url>
     <loc>https://kinotrailers.netlify.app/movie/1087192-kak-priruchit-drakona.html</loc>
+  </url>
+
+  <url>
+    <loc>https://kinotrailers.netlify.app/movie/1007734-nikto-2.html</loc>
   </url>
 
   <url>
@@ -62,7 +70,11 @@
   </url>
 
   <url>
-    <loc>https://kinotrailers.netlify.app/movie/803796-keypop-ohotnitsy-na-demonov.html</loc>
+    <loc>https://kinotrailers.netlify.app/movie/660033-kak-ya-stal-gangsterom-pravdivaya-istoriya.html</loc>
+  </url>
+
+  <url>
+    <loc>https://kinotrailers.netlify.app/movie/1035259-golyy-pistolet.html</loc>
   </url>
 
   <url>
@@ -71,17 +83,5 @@
 
   <url>
     <loc>https://kinotrailers.netlify.app/movie/1022787-elio.html</loc>
-  </url>
-
-  <url>
-    <loc>https://kinotrailers.netlify.app/movie/660033-kak-ya-stal-gangsterom-pravdivaya-istoriya.html</loc>
-  </url>
-
-  <url>
-    <loc>https://kinotrailers.netlify.app/movie/1429739-gold-rush-gang.html</loc>
-  </url>
-
-  <url>
-    <loc>https://kinotrailers.netlify.app/movie/1389158-mama.html</loc>
   </url>
 </urlset>
