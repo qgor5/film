@@ -10,19 +10,11 @@
   </url>
 
   <url>
-    <loc>https://kinotrailers.netlify.app/movie/338969-toksichnyy-mstitel.html</loc>
-  </url>
-
-  <url>
     <loc>https://kinotrailers.netlify.app/movie/1086910-poteryannaya-printsessa.html</loc>
   </url>
 
   <url>
-    <loc>https://kinotrailers.netlify.app/movie/1186350-marko.html</loc>
-  </url>
-
-  <url>
-    <loc>https://kinotrailers.netlify.app/movie/941109-gryaznaya-igra.html</loc>
+    <loc>https://kinotrailers.netlify.app/movie/338969-toksichnyy-mstitel.html</loc>
   </url>
 
   <url>
@@ -35,6 +27,14 @@
 
   <url>
     <loc>https://kinotrailers.netlify.app/movie/755898-voyna-mirov.html</loc>
+  </url>
+
+  <url>
+    <loc>https://kinotrailers.netlify.app/movie/941109-gryaznaya-igra.html</loc>
+  </url>
+
+  <url>
+    <loc>https://kinotrailers.netlify.app/movie/1186350-marko.html</loc>
   </url>
 
   <url>
@@ -66,10 +66,6 @@
   </url>
 
   <url>
-    <loc>https://kinotrailers.netlify.app/movie/1357886-django-undisputed.html</loc>
-  </url>
-
-  <url>
     <loc>https://kinotrailers.netlify.app/movie/1054867-bitva-za-bitvoy.html</loc>
   </url>
 
@@ -78,10 +74,14 @@
   </url>
 
   <url>
-    <loc>https://kinotrailers.netlify.app/movie/1061474-supermen.html</loc>
+    <loc>https://kinotrailers.netlify.app/movie/1357886-django-undisputed.html</loc>
   </url>
 
   <url>
-    <loc>https://kinotrailers.netlify.app/movie/1552819-assassin.html</loc>
+    <loc>https://kinotrailers.netlify.app/movie/533533-tron-ares.html</loc>
+  </url>
+
+  <url>
+    <loc>https://kinotrailers.netlify.app/movie/1061474-supermen.html</loc>
   </url>
 </urlset>
