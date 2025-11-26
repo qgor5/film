@@ -18,6 +18,10 @@
   </url>
 
   <url>
+    <loc>https://kinotrailers.netlify.app/movie/1309012-alter.html</loc>
+  </url>
+
+  <url>
     <loc>https://kinotrailers.netlify.app/movie/1062722-frankenshteyn.html</loc>
   </url>
 
@@ -30,19 +34,15 @@
   </url>
 
   <url>
-    <loc>https://kinotrailers.netlify.app/movie/1481331-nahual.html</loc>
-  </url>
-
-  <url>
     <loc>https://kinotrailers.netlify.app/movie/967941-zlaya-chast-2.html</loc>
   </url>
 
   <url>
-    <loc>https://kinotrailers.netlify.app/movie/1426968-ya-no-quedan-junglas.html</loc>
+    <loc>https://kinotrailers.netlify.app/movie/1481331-nahual.html</loc>
   </url>
 
   <url>
-    <loc>https://kinotrailers.netlify.app/movie/755898-voyna-mirov.html</loc>
+    <loc>https://kinotrailers.netlify.app/movie/1426968-ya-no-quedan-junglas.html</loc>
   </url>
 
   <url>
@@ -54,7 +54,15 @@
   </url>
 
   <url>
-    <loc>https://kinotrailers.netlify.app/movie/1084222-operatsiya-krovavaya-ohota.html</loc>
+    <loc>https://kinotrailers.netlify.app/movie/755898-voyna-mirov.html</loc>
+  </url>
+
+  <url>
+    <loc>https://kinotrailers.netlify.app/movie/1433719-dikie-zemli.html</loc>
+  </url>
+
+  <url>
+    <loc>https://kinotrailers.netlify.app/movie/1248226-uboynaya-subbota.html</loc>
   </url>
 
   <url>
@@ -62,7 +70,11 @@
   </url>
 
   <url>
-    <loc>https://kinotrailers.netlify.app/movie/1248226-uboynaya-subbota.html</loc>
+    <loc>https://kinotrailers.netlify.app/movie/1084242-zveropolis-2.html</loc>
+  </url>
+
+  <url>
+    <loc>https://kinotrailers.netlify.app/movie/1084222-operatsiya-krovavaya-ohota.html</loc>
   </url>
 
   <url>
@@ -71,17 +83,5 @@
 
   <url>
     <loc>https://kinotrailers.netlify.app/movie/1311031-istrebitel-demonov-beskonechnyy-zamok.html</loc>
-  </url>
-
-  <url>
-    <loc>https://kinotrailers.netlify.app/movie/1197137-chernyy-telefon-2.html</loc>
-  </url>
-
-  <url>
-    <loc>https://kinotrailers.netlify.app/movie/1296504-stand-your-ground.html</loc>
-  </url>
-
-  <url>
-    <loc>https://kinotrailers.netlify.app/movie/7451-tri-iksa.html</loc>
   </url>
 </urlset>
