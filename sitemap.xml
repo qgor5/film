@@ -34,15 +34,11 @@
   </url>
 
   <url>
-    <loc>https://kinotrailers.netlify.app/movie/1198994-na-pomosch.html</loc>
-  </url>
-
-  <url>
     <loc>https://kinotrailers.netlify.app/movie/1159559-krik-7.html</loc>
   </url>
 
   <url>
-    <loc>https://kinotrailers.netlify.app/movie/1171145-ograblenie-v-los-andzhelese.html</loc>
+    <loc>https://kinotrailers.netlify.app/movie/1198994-na-pomosch.html</loc>
   </url>
 
   <url>
@@ -50,11 +46,19 @@
   </url>
 
   <url>
+    <loc>https://kinotrailers.netlify.app/movie/1265609-voennaya-mashina.html</loc>
+  </url>
+
+  <url>
+    <loc>https://kinotrailers.netlify.app/movie/1171145-ograblenie-v-los-andzhelese.html</loc>
+  </url>
+
+  <url>
     <loc>https://kinotrailers.netlify.app/movie/875828-ostrye-kozyrki-bessmertnyy.html</loc>
   </url>
 
   <url>
-    <loc>https://kinotrailers.netlify.app/movie/1265609-voennaya-mashina.html</loc>
+    <loc>https://kinotrailers.netlify.app/movie/879945-neznakomets.html</loc>
   </url>
 
   <url>
@@ -62,15 +66,7 @@
   </url>
 
   <url>
-    <loc>https://kinotrailers.netlify.app/movie/1084242-zveropolis-2.html</loc>
-  </url>
-
-  <url>
     <loc>https://kinotrailers.netlify.app/movie/1316092-grozovoy-pereval.html</loc>
-  </url>
-
-  <url>
-    <loc>https://kinotrailers.netlify.app/movie/999136-ne-vhodit.html</loc>
   </url>
 
   <url>
@@ -78,10 +74,14 @@
   </url>
 
   <url>
-    <loc>https://kinotrailers.netlify.app/movie/1193501-svist.html</loc>
+    <loc>https://kinotrailers.netlify.app/movie/1084242-zveropolis-2.html</loc>
   </url>
 
   <url>
-    <loc>https://kinotrailers.netlify.app/movie/879945-neznakomets.html</loc>
+    <loc>https://kinotrailers.netlify.app/movie/999136-ne-vhodit.html</loc>
+  </url>
+
+  <url>
+    <loc>https://kinotrailers.netlify.app/movie/1193501-svist.html</loc>
   </url>
 </urlset>
