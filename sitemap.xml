@@ -10,15 +10,11 @@
   </url>
 
   <url>
-    <loc>https://kinotrailers.netlify.app/movie/1108427-moana.html</loc>
-  </url>
-
-  <url>
     <loc>https://kinotrailers.netlify.app/movie/1275779-den-razoblacheniya.html</loc>
   </url>
 
   <url>
-    <loc>https://kinotrailers.netlify.app/movie/1083381-zakulise-realnosti.html</loc>
+    <loc>https://kinotrailers.netlify.app/movie/1108427-moana.html</loc>
   </url>
 
   <url>
@@ -26,7 +22,15 @@
   </url>
 
   <url>
+    <loc>https://kinotrailers.netlify.app/movie/1083381-zakulise-realnosti.html</loc>
+  </url>
+
+  <url>
     <loc>https://kinotrailers.netlify.app/movie/1081003-supergerl.html</loc>
+  </url>
+
+  <url>
+    <loc>https://kinotrailers.netlify.app/movie/454639-vlasteliny-vselennoy.html</loc>
   </url>
 
   <url>
@@ -42,11 +46,7 @@
   </url>
 
   <url>
-    <loc>https://kinotrailers.netlify.app/movie/454639-vlasteliny-vselennoy.html</loc>
-  </url>
-
-  <url>
-    <loc>https://kinotrailers.netlify.app/movie/1228710-mandalorets-i-grogu.html</loc>
+    <loc>https://kinotrailers.netlify.app/movie/1668364-deseo.html</loc>
   </url>
 
   <url>
@@ -54,7 +54,11 @@
   </url>
 
   <url>
-    <loc>https://kinotrailers.netlify.app/movie/1668364-deseo.html</loc>
+    <loc>https://kinotrailers.netlify.app/movie/1228710-mandalorets-i-grogu.html</loc>
+  </url>
+
+  <url>
+    <loc>https://kinotrailers.netlify.app/movie/969681-chelovek-pauk-novyy-den.html</loc>
   </url>
 
   <url>
@@ -66,11 +70,11 @@
   </url>
 
   <url>
-    <loc>https://kinotrailers.netlify.app/movie/969681-chelovek-pauk-novyy-den.html</loc>
+    <loc>https://kinotrailers.netlify.app/movie/1523145-tvoe-serdtse-budet-razbito.html</loc>
   </url>
 
   <url>
-    <loc>https://kinotrailers.netlify.app/movie/1523145-tvoe-serdtse-budet-razbito.html</loc>
+    <loc>https://kinotrailers.netlify.app/movie/1630409-.html</loc>
   </url>
 
   <url>
@@ -79,9 +83,5 @@
 
   <url>
     <loc>https://kinotrailers.netlify.app/movie/1127384-glubokie-vody.html</loc>
-  </url>
-
-  <url>
-    <loc>https://kinotrailers.netlify.app/movie/1368314-passazhir.html</loc>
   </url>
 </urlset>
