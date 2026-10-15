@@ -18,15 +18,19 @@
   </url>
 
   <url>
-    <loc>https://kinotrailers.netlify.app/movie/1368337-odisseya.html</loc>
-  </url>
-
-  <url>
     <loc>https://kinotrailers.netlify.app/movie/1148365-matchbox-film.html</loc>
   </url>
 
   <url>
+    <loc>https://kinotrailers.netlify.app/movie/1368337-odisseya.html</loc>
+  </url>
+
+  <url>
     <loc>https://kinotrailers.netlify.app/movie/1101412-vyshka-2.html</loc>
+  </url>
+
+  <url>
+    <loc>https://kinotrailers.netlify.app/movie/1236045-zhivotnye.html</loc>
   </url>
 
   <url>
@@ -38,27 +42,7 @@
   </url>
 
   <url>
-    <loc>https://kinotrailers.netlify.app/movie/1236045-zhivotnye.html</loc>
-  </url>
-
-  <url>
     <loc>https://kinotrailers.netlify.app/movie/1712451-obitel-mertvyh.html</loc>
-  </url>
-
-  <url>
-    <loc>https://kinotrailers.netlify.app/movie/1751701-after-impact.html</loc>
-  </url>
-
-  <url>
-    <loc>https://kinotrailers.netlify.app/movie/1294189-mangust.html</loc>
-  </url>
-
-  <url>
-    <loc>https://kinotrailers.netlify.app/movie/1339274-ne-ostavlyayte-detey-odnih.html</loc>
-  </url>
-
-  <url>
-    <loc>https://kinotrailers.netlify.app/movie/460458-obitel-zla-rakkun-siti.html</loc>
   </url>
 
   <url>
@@ -66,7 +50,19 @@
   </url>
 
   <url>
-    <loc>https://kinotrailers.netlify.app/movie/1204680-hitryy-koyot.html</loc>
+    <loc>https://kinotrailers.netlify.app/movie/1294189-mangust.html</loc>
+  </url>
+
+  <url>
+    <loc>https://kinotrailers.netlify.app/movie/1751701-after-impact.html</loc>
+  </url>
+
+  <url>
+    <loc>https://kinotrailers.netlify.app/movie/460458-obitel-zla-rakkun-siti.html</loc>
+  </url>
+
+  <url>
+    <loc>https://kinotrailers.netlify.app/movie/1339274-ne-ostavlyayte-detey-odnih.html</loc>
   </url>
 
   <url>
@@ -78,10 +74,14 @@
   </url>
 
   <url>
-    <loc>https://kinotrailers.netlify.app/movie/1232569-pinokkio-raskreposchennyy.html</loc>
+    <loc>https://kinotrailers.netlify.app/movie/1204680-hitryy-koyot.html</loc>
   </url>
 
   <url>
-    <loc>https://kinotrailers.netlify.app/movie/1284046-natisk.html</loc>
+    <loc>https://kinotrailers.netlify.app/movie/1058424-nadezhda.html</loc>
+  </url>
+
+  <url>
+    <loc>https://kinotrailers.netlify.app/movie/1232569-pinokkio-raskreposchennyy.html</loc>
   </url>
 </urlset>
