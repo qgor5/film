@@ -22,23 +22,11 @@
   </url>
 
   <url>
-    <loc>https://kinotrailers.netlify.app/movie/1101412-vyshka-2.html</loc>
-  </url>
-
-  <url>
-    <loc>https://kinotrailers.netlify.app/movie/1400940-kleyfeys.html</loc>
-  </url>
-
-  <url>
-    <loc>https://kinotrailers.netlify.app/movie/1368337-odisseya.html</loc>
-  </url>
-
-  <url>
     <loc>https://kinotrailers.netlify.app/movie/1596275-drayv-pritvorschiki.html</loc>
   </url>
 
   <url>
-    <loc>https://kinotrailers.netlify.app/movie/1514026-baddi.html</loc>
+    <loc>https://kinotrailers.netlify.app/movie/1101412-vyshka-2.html</loc>
   </url>
 
   <url>
@@ -46,11 +34,11 @@
   </url>
 
   <url>
-    <loc>https://kinotrailers.netlify.app/movie/1291595-astral-6-oni-uzhe-zdes.html</loc>
+    <loc>https://kinotrailers.netlify.app/movie/1368337-odisseya.html</loc>
   </url>
 
   <url>
-    <loc>https://kinotrailers.netlify.app/movie/1384216-sobachi-zvezdy.html</loc>
+    <loc>https://kinotrailers.netlify.app/movie/1400940-kleyfeys.html</loc>
   </url>
 
   <url>
@@ -58,15 +46,19 @@
   </url>
 
   <url>
+    <loc>https://kinotrailers.netlify.app/movie/1514026-baddi.html</loc>
+  </url>
+
+  <url>
+    <loc>https://kinotrailers.netlify.app/movie/1384216-sobachi-zvezdy.html</loc>
+  </url>
+
+  <url>
     <loc>https://kinotrailers.netlify.app/movie/1232569-pinokkio-raskreposchennyy.html</loc>
   </url>
 
   <url>
-    <loc>https://kinotrailers.netlify.app/movie/1148365-matchbox-film.html</loc>
-  </url>
-
-  <url>
-    <loc>https://kinotrailers.netlify.app/movie/1561726-genialnyy-plan.html</loc>
+    <loc>https://kinotrailers.netlify.app/movie/1291595-astral-6-oni-uzhe-zdes.html</loc>
   </url>
 
   <url>
@@ -74,7 +66,7 @@
   </url>
 
   <url>
-    <loc>https://kinotrailers.netlify.app/movie/1423191-obitel-zla.html</loc>
+    <loc>https://kinotrailers.netlify.app/movie/1148365-matchbox-film.html</loc>
   </url>
 
   <url>
@@ -82,6 +74,14 @@
   </url>
 
   <url>
+    <loc>https://kinotrailers.netlify.app/movie/1561726-genialnyy-plan.html</loc>
+  </url>
+
+  <url>
     <loc>https://kinotrailers.netlify.app/movie/1465063-ostrov-zabveniya.html</loc>
+  </url>
+
+  <url>
+    <loc>https://kinotrailers.netlify.app/movie/1423191-obitel-zla.html</loc>
   </url>
 </urlset>
